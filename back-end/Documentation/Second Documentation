@@ -1,0 +1,136 @@
+*** Left side Menu bar have this following feilds
+
+1. Dashboard
+2. Customer
+    a. Add Customer
+    b. Customer List
+    c. Credit Customer
+    d. Paid Customer
+    e. Customer Ledger
+3. Manufacturer
+    a. Add manufacturer
+    b. Manufacturer List
+    c. Manufacturer Ledger
+4. Medicine
+    a. Add Category
+    b. Category List
+    c. Add Unit
+    d. Unit List
+    e. Add type
+    f. Type List
+    g. Leaf setting
+    h. Add Medicine
+    i. Medicine List
+5. Purchase
+    a. Add purchase
+    b. Purchase List
+6. Invoice
+    a. Add Invoice
+    b. POS Invoice
+    c. Invoice List
+7. Return
+    a. Add return
+    b. Invoice return list
+    c. Manufacturer return List
+    d. Wastage return list
+8. Stock
+    a. Stock Report
+    b. Stock Report (Batch wise )
+    c. Available Stock
+9. Bank
+    a. Add bank
+    b. Bank List
+10. Account
+    a. Chat of account
+    b. Opening Balance
+    c. Manufacturer Payment
+    d. Customer Receive
+    e. Cash Adjustment
+    f. Debit Voucher
+    g. Credit Voucher
+    h. Contra Voucher
+    i. Journal Voucher
+    j. Voucher List
+    k. Report
+11. Report
+    a. Add Closing
+    b. Closing List
+    c. Sales Report
+    d. Sales Report(user)
+    e. Sales Report(Product)
+    f. Sales Report(Category)
+    h. Purchase Report
+    i. Purchase Report(Category)
+12. Human Resource
+    a. Employee
+        i. Add Designation
+        ii. Designation List
+        iii. Add Employee
+        iv. Employee list
+    b. Attendence
+        i. Add Attendence
+        ii. Attendence List
+        iii. Date Wise Attendence Report
+    c. Payroll
+        1. Add benefits
+        2. Benefits List
+        3. Add Salary Setup
+        4. Salary Setup List
+        5. Salary Generate
+        6. Salary Sheet
+        7. Salary Payment
+    d. Expense
+        1. Add expense item
+        2. Expense item list
+        3. Add expense
+        4. Expense list
+        5. Expense Statement
+    e. Loan
+        1. Add Person
+        2. Person List
+        3. Add Loan
+        4. Add Payment
+        5. Loan List
+        6. Person Ledger
+13. Tax
+    a. tax settings
+    b. Add Income Tax
+    c. Income Tax List
+14. Service
+    a. Add Service
+    b. Service List
+    c. Add Invoice
+    d. Invoice List
+15. Search
+    a. Medicine Search
+    b. Invoice Search
+    c. Purchase Search
+16. Application Setting
+    a. Add user
+    b. user List
+    c. currency
+    d. Setting
+    e. Download Backup
+    f. Restor database
+    h. Database import
+    i. Panel setting
+    j. Add role
+    k. Role list
+    l. Assign Role
+    m. Language
+17. Auto_Update
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Dasboard Page
+
+*** Dashboard Page have following feilds
+    1. Totol Customer (Show Detail Button Must be there)
+    2. Total Medicine (Show Detail Button Must be there)  NOTE :- These all are numerical values
+    3. Out Of Stock (Show Detail Button Must be there) 
+    4. Expired Medicine (Show Detail Button Must be there)
+
+    5. Pie-Chart of Income and expence report or Statement
+    6. Best Sale of Month
+    7. Monthly Progress report
+    8. Today Report

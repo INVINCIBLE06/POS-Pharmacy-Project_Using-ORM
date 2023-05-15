@@ -1,0 +1,19 @@
+Company Title *
+Menu Title *
+Address
+Email
+Phone
+Favicon
+Logo
+Login Background Image
+Language
+Currency
+
+
+Discount Type *
+Time zone *
+Footer Text
+
+
+
+Discount Type *

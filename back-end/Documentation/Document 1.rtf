@@ -1,0 +1,2144 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red255\green0\blue0;\red255\green255\blue0;\red0\green0\blue0;}
+{\*\listtable 
+{\list\listhybrid
+{\listlevel\levelnfc0\leveljc0\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc4\leveljc0\levelstartat1{\leveltext\'02\'01.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc3\leveljc0\levelstartat1{\leveltext\'02\'02.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc2\leveljc0\levelstartat1{\leveltext\'02\'03.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc1\leveljc0\levelstartat1{\leveltext\'02\'04.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc0\leveljc0\levelstartat1{\leveltext\'02\'05.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc4\leveljc0\levelstartat1{\leveltext\'02\'06.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc3\leveljc0\levelstartat1{\leveltext\'02\'07.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc0\leveljc1\levelstartat1{\leveltext\'02\'08.;}{\levelnumbers\'01;}\jclisttab\tx0}\listid1 }}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\sl240\slmult1\qc\ul\f0\fs36\lang9 Squad\ulnone  \ul Pharma\ulnone  \ul Table\ulnone  \ul Design\cf1\ulnone\par
+\par
+
+\pard\sl240\slmult1\cf0\fs24 Link to application :  \line Now it is in the making till then it is web page link.\par
+
+\pard\fs22\lang16393\par
+TABLES used in this software (till now)\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720 languages (D) JD 2 (English, Hindi)\par
+{\pntext\f0 2.\tab}currencies (D) JD -> 2 (USD, Rupees (INR))\par
+{\pntext\f0 3.\tab}dicounts (D) JD\par
+{\pntext\f0 4.\tab}settings (D) JD\par
+{\pntext\f0 5.\tab}page_customization (D) (JD)\par
+{\pntext\f0 6.\tab}banks (D) JD\par
+{\pntext\f0 7.\tab}password policies (D) J\par
+{\pntext\f0 8.\tab}incorrect_pasword_count (D)\par
+{\pntext\f0 9.\tab}roles (D) JD\par
+{\pntext\f0 10.\tab}users (D) JD\par
+{\pntext\f0 11.\tab}employees (D)\par
+{\pntext\f0 12.\tab}customers (D) JD\par
+{\pntext\f0 13.\tab}manufacturers (D) JD\par
+{\pntext\f0 14.\tab}Taxations (D) JD\par
+{\pntext\f0 15.\tab}tax_details (D) JD\par
+{\pntext\f0 16.\tab}user_roles (D) JD\par
+{\pntext\f0 17.\tab}modules (D) JD\par
+{\pntext\f0 18.\tab}categories (D) JD\par
+{\pntext\f0 19.\tab}unit(D) JD\par
+{\pntext\f0 20.\tab}role_modules(D) JD\par
+{\pntext\f0 21.\tab}\lang9 distributors \fs24 (D) JD\fs22\lang16393\par
+{\pntext\f0 22.\tab}\lang9 dist_manufactures (D) JD\lang16393\par
+{\pntext\f0 23.\tab}\lang9 medtypes (D) JD\lang16393\par
+{\pntext\f0 24.\tab}\lang9 medicines\cf1\b\fs28  \cf0\b0\fs22 (D)JD\lang16393\par
+{\pntext\f0 25.\tab}boxes (D) JD\par
+{\pntext\f0 26.\tab}stocks (D)\par
+{\pntext\f0 27.\tab}\fs24 new_purchases (D)\fs22\par
+{\pntext\f0 28.\tab}\fs24 invoices (D)\fs22\par
+{\pntext\f0 29.\tab}\fs24 sales (D)\fs22\par
+{\pntext\f0 30.\tab}\fs24 salaries (D)\fs22\par
+{\pntext\f0 31.\tab}\fs24 expenses (D)\fs22\par
+{\pntext\f0 32.\tab}\fs24 loggs (D)\fs22\par
+
+\pard\line\par
+
+\pard\qc\cf1\b\fs28 LANGUAGES TABLE\fs24\par
+
+\pard\par
+\cf0 Table creation query :-\cf1  \par
+\par
+\cf0\b0\fs22 CREATE TABLE languages\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    name CHAR(50) NOT NULL,\par
+    file VARCHAR(50) NOT NULL,\par
+    abbreviation CHAR(5) NOT NULL,\par
+
+\pard\sl240\slmult1\tx360\tx1080\fs24\lang9    status ENUM ('active', 'inactive') DEFAULT 'active',\par
+
+\pard\fs22\lang16393     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\par
+\par
+\b Use\b0  :-This table will store the name of the language along with the file name where the translations for all items in that language are saved. Additionally, the table will store the abbreviation and symbol of the language in the same row.\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\b\fs24 id \fs22 - \b0\fs24\lang9 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\line\par
+{\pntext\f0 2.\tab}\b name\b0  - \fs22 This is the column in the database where we are storing the language name. The data type we are using is \b CHAR\b0 , as language names are typically composed of letters only and not numbers.\fs24\line\par
+{\pntext\f0 3.\tab}\b file - \b0 In this file we storing storing the translation of all the items. So we are keeping only the name of the file. That is why \b VARCHAR \b0 datatype.\line\par
+{\pntext\f0 4.\tab}\b abbreviation - \b0 In this column we storing storing the abbreviations of all the language. Since thy are in character format. That is why \b CHAR \b0 datatype.\line\par
+{\pntext\f0 5.\tab}\b status - \b0 This is the column in the database which will store the status of the particular role. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 6.\tab}\b created_at\b0  DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 7.\tab}\b updated_at\b0  DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 8.\tab}\b deleted_at\b0  DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\par
+
+\pard\par
+\par
+\tab\tab\tab\tab\cf1\b\fs28 CURRENCIES TABLE\cf0\par
+\fs24 Table creation query -\b0\par
+\par
+\tab\fs22\lang16393 CREATE TABLE currencies(\par
+\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+  \tab name CHAR(50) NOT NULL,\par
+    \tab abbreviation CHAR(5) NOT NULL,\par
+    \tab symbol VARCHAR(5) NOT NULL,\par
+\fs24\lang9\tab status ENUM ('active', 'inactive') DEFAULT 'active',\fs22\lang16393\par
+    \tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    \tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    \tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+\tab );\par
+\par
+\b Use\b0  :- This table will store the name of the curreceny along with the abbreviation and symbol of that currency in the same row.\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\b\fs24 id \fs22 - \b0\fs24\lang9 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\line\par
+{\pntext\f0 2.\tab}\b\fs24\lang9 name\b0  - \fs22 This is the column in the database where we are storing the currecny name. The data type we are using is \b CHAR\b0 , as currecny names are typically composed of letters only and not numbers.\lang16393\line\par
+{\pntext\f0 3.\tab}\b\fs24\lang9 abbreviation - \b0 In this column we storing storing the abbreviations of that particular currency. Since they are in character format. That is why \b CHAR \b0 datatype.\fs22\lang16393\line\par
+{\pntext\f0 4.\tab}\b\fs24\lang9 symbol - \b0 In this column we are storing the currecny symbols. Symbols come is in the \b VARCHAR \b0 datatype. That is why it is used.\line\par
+{\pntext\f0 5.\tab}\b status :-  \b0 This is the column in the database which will store the status of the particular role. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 6.\tab}\b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 7.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 8.\tab}\b deleted_at\b0  DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\fs22\lang16393\par
+
+\pard\fs24\lang9\par
+\tab\tab\tab\tab\cf1\b\fs28 DISCOUNTS TABLE\cf0\par
+\fs24\par
+Table creation query -\b0\par
+\par
+\tab\fs22\lang16393 CREATE TABLE discounts\par
+\tab (\par
+    \tab\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    \tab\tab name VARCHAR(50) NOT NULL,\par
+    \tab\tab type VARCHAR(50) NOT NULL,\par
+\fs24\lang9\tab\tab status ENUM ('active', 'inactive') DEFAULT 'active',\fs22\lang16393\par
+    \tab\tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    \tab\tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    \tab\tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+\tab );\par
+\par
+\b\fs24 Use\b0  :- This table will store the type of discount along values. This discount can be given on different category of product. For ex medicine, cosmetics, home use, etc.\fs22\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\b\fs24 id \fs22 - \b0\fs24\lang9 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\line\par
+{\pntext\f0 2.\tab}\b\fs24\lang9 name\b0  - \fs22 This is the column in the database where we are storing the category name. The data type we are using is \b VARCHAR\b0 , as category names are typically composed of letters only and  numbers both.\lang16393\line\par
+{\pntext\f0 3.\tab}\b\fs24\lang9 type\b0  :- \line  \par
+{\pntext\f0 4.\tab}\b status :-  \b0 This is the column in the database which will store the status of the particular role. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 5.\tab}\b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 6.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 7.\tab}\b deleted_at\b0  DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\line\fs22\lang16393\par
+
+\pard\fs24\lang9\tab\tab\tab\tab\tab\cf1\b\fs28 SETTINGS TABLE\cf0\b0\fs22\lang16393\par
+
+\pard\sl240\slmult1\cf2\highlight3\b\fs28\lang9 Settings Page : \cf0\highlight0\b0\fs24\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1440\sl240\slmult1 This is the starting page of the application. Here there are number of field where the information is filled by admin. Whom the software is given. \par
+{\pntext\f1\'B7\tab}Starting page contain 11 feild\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\li1710\sl240\slmult1 Company title\par
+{\pntext\f0 2.\tab}Menu title\par
+{\pntext\f0 3.\tab}Address\par
+{\pntext\f0 4.\tab}Email\par
+{\pntext\f0 5.\tab}Phone / Contact Number\par
+{\pntext\f0 6.\tab}Favicon image\par
+{\pntext\f0 7.\tab}Logo\par
+{\pntext\f0 8.\tab}Language Id\par
+{\pntext\f0 9.\tab}Currency Id\par
+{\pntext\f0 10.\tab}Discount Id\par
+{\pntext\f0 11.\tab}RTL / LTR (Licensense Number)\par
+{\pntext\f0 12.\tab}GST NO\par
+{\pntext\f0 13.\tab}Footer Text\line\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-180\li1260\sl240\slmult1\tx1080 After filling all the this information the software will go on store the entered in the database.\par
+{\pntext\f1\'B7\tab}This will happen when the user click on the " \b SUBMIT \b0 " button. If the user clicks on " \b RESET \b0 " button then the filled information will get erased. \par
+{\pntext\f1\'B7\tab}Both the logo and favicon image must be in png or jpg format.\par
+{\pntext\f1\'B7\tab}Email validation will be done by the software\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-180\li1260\ri-1620\sl240\slmult1\tx1080\tx8640 Phone number validation will be done.\par
+{\pntext\f1\'B7\tab}\b Language Id\b0  - We will take the language name as input, but when storing it in the database, it will be stored in the language ID format. All the language information will be stored in the 'languages' table.\par
+{\pntext\f1\'B7\tab}\b Currency Id\b0  - We will take the currecny name as input, but when storing it in the database, it will be stored in the currency ID format. All the currency information will be stored in the 'currencies' table.\par
+{\pntext\f1\'B7\tab}\b Discount Id\b0  - We will take the discount name as input, but when storing it in the database, it will be stored in the discount ID format. All the discount information will be stored in the 'discounts' table.\par
+
+\pard\ri-1620\sl240\slmult1\tx1080\tx8640\par
+
+\pard\b Table creation query -\b0\par
+
+\pard\ri-1620\sl240\slmult1\tx1080\tx8640\tab\par
+
+\pard\tab\fs22\lang16393 CREATE TABLE settings\par
+\tab (\par
+      \tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+      \tab company_title VARCHAR(50),\par
+\tab menu_title VARCHAR(50),\par
+\tab address VARCHAR(150),\par
+\tab email VARCHAR(150) UNIQUE,\par
+\tab phone INT,\par
+\tab favicon VARCHAR(50),\par
+\tab logo VARCHAR(50),\par
+\tab language_Id INT,\par
+\tab FOREIGN KEY (language_Id) REFERENCES languages(id),\par
+\tab currency_Id INT,\par
+\tab FOREIGN KEY (currency_Id) REFERENCES currencies(id),\par
+\tab discount_Id INT,\par
+\tab FOREIGN KEY (discount_Id) REFERENCES discount(id),\par
+\tab licence_number VARCHAR(25),\par
+\tab gst_no VARCHAR(15),\par
+\tab time_zone VARCHAR(150) NOT NULL,\par
+\tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+\tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+\tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP                                \par
+\tab );    \fs24\lang9\par
+
+\pard\ri-1620\sl240\slmult1\tx1080\tx8640\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\ri-1620\sl240\slmult1\tx710\tx1080\tx9810\b id :\fs28  \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is INT, and it is set to auto-increment so that a new unique value is generated for each row.\line\par
+
+\pard 
+{\pntext\f0 2.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\ri-1620\sl240\slmult1\tx1080\tx9810\b company_title : \b0 This is a column in the database table that will store the name of the    company. The data type is VARCHAR(50), which allows for up to 50 characters in the name. The company name can contain both characters and numbers.\line\par
+{\pntext\f0 3.\tab}\b menu_title : \b0 This is a column in the database table that will store the title of the menu. The data type is VARCHAR(50), which allows for up to 50 characters in the title. The menu title can contain both characters and numbers\b .\b0\line\par
+{\pntext\f0 4.\tab}\b address\b0  : This is a column in the database table that will store the address of the company. The data type is VARCHAR(150), which allows for up to 150 characters in the address. The address can contain a combination of plot number, street name, area, district, state, country, and pincode.\line  \par
+{\pntext\f0 5.\tab}\b email : \b0 This is a column in the database table that will store the email address of the company. The data type is VARCHAR(35), which allows for up to 35 characters in the email address. Email addresses typically contain both characters and numbers, and they are unique to each user or company.\line\par
+{\pntext\f0 6.\tab}\b phone \b0 : This is a column in the database table that will store the phone number of the company. The data type is INT, which allows for only numeric values in the phone number. The length of the phone number is not defined because different countries have different phone number formats.\line\par
+{\pntext\f0 7.\tab}\b favicon : \b0 This is a column in the database table that will store the filename of an image that will be used as the favicon for the website. The data type is VARCHAR. Only the filename is stored in the database, not the image itself. Below the \b 'G' \b0 icon in the screen shot is the favicon image.\line\tab                  {\pict{\*\picprop}\wmetafile8\picw6271\pich900\picwgoal3555\pichgoal510 
+010009000003882f00000000692f000000000400000003010800050000000c02deffed00050000
+000b020000000005000000070104000000692f0000410b2000cc002200ed0000000000deffed00
+0000000028000000ed000000220000000100180000000000905e00000000000000000000000000
+0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffff00b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4b5b4b4
+bcbbbbcac9c9dad9d9fefefeffffffffffffffffffffffff00fbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbf4f4f4e6e6e6dbdadab5b4b4e6e5e5ffffffffffffffffff00fbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbc9c9c9e4e3e3ff
+ffffffffff00fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbcac9c9e6e5e5ffffff00fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b4fefefe00fbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbdbdbdbdad9d900fbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+e6e6e6c7c7c600fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbf4f4f4b8b7b700fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfcfcfcfdfdfdfdfdfd
+fdfdfdfdfdfdfcfcfcfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfcfcfcffff
+fffffffffffffffffffffffffffffffffffffffffffffcfcfcfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd143403c43403c6b40
+3cfbe3b3fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbcdfbfb43408f4340
+3c43403cb0683cfbfbe9fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfcfcfcfffffffafdf9b4d9a776ba5d58ab3a58aa3a72b859acd59df8fbf6fffffffdfdfdfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbb0e3fb8d4071fbfbd1fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfb6bafe9cd8b3cfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfcfcfcffffffecf5e971b75853a83453a83453a83453a83453a83453a834
+8eaf58fef0e8fffffffcfcfcfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfffffffafcf971b75753a83458aa3aa2d091d4e9
+ccd6eaceaad49b99a34af08641f69d67fffefefffffffbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfbb0e3fb43407143403c8d683c6b688ffbe3
+b3fbfbfbcdfbfb43408ffbcc8ffbfbfbfbfbfb6bafe9e4af71fbfbfbe4fbfb4368b343403c4340
+3ce4af71fbfbfb8dccfb43403c43403c43403cfbcc8ffbfbfbcdfbfb8d408ffbfbd1fbfbfbcdfb
+fb8d408ffbfbd1fbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfbcdfbfb8d408ffbfbd1fbfb
+fb8dccfbcd8b3cfbfbfbe4fbfb4368b343403c43403c8d403cfbfbd1b0e3fb43407143403c8d68
+3c6b688ffbe3b3cdfbfb8d408ffbfbd1fbfbfbcdfbfb8d408ffbfbd1b0e3fbb06871fbfbe96baf
+e9e4af71fbfbfbfbfbfb6bafe9e4af71fbfbfbb0e3fb43407143403c8d403c6bafb3e4af71fbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fb438bd143403c43403c43403ccd8b3cfbfbfbfbfbfb8dccfb43403c43403c43403cfbcc8ffbfb
+fbfbfbfb8dccfb43403c43403c43403cfbcc8ffbfbfbfbfbfb6bafe943403c43403cb08b3c6b68
+b3fbe3b3fbfbfb438bd1fbcc8ffbfbfb8dccfb43403c43403c43403ce4af71fbfbfbfbfbfbfbfb
+fbfbfbfbcdfbfb43408f43403c43403ccd8b3cfbfbfbfbfbfb8dccfb43403c43403c43403ce4af
+71fbfbfb438bd143403c43403c8d8b8fcd8b3cfbfbfb6bafe9e4af71fbfbfbfbfbfbe4fbfb4368
+b343403c43403ce4af71cdfbfb8d408ffbfbd1fbfbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb585652878582fbfbfbfbfbfbfbfbfbfbfbfb8785825856
+52fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfcfcfcffffff89d6cd4baa4856
+aa38d5eacefffffffffffffffffffffffffde6d8f48746f48542fcd8c3fffffffcfcfcfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfb438bd1e4af71fb
+fbfbb0e3fb6b4071fbe3b3fbfbfb8dccfb8d8b71cd8b71fbfbfbfbfbfb6bafe9e4af71fbfbfb43
+8bd1cd8b3cfbfbfbfbfbfbfbfbfbb0e3fb6b4071fbe3b3fbfbfbcdfbfb6b408ffbe3b3cdfbfb8d
+408ffbfbd1fbfbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfbcd
+fbfb8d408ffbfbd1fbfbfb8dccfbcd8b3cfbfbfb438bd1cd8b3cfbfbfbfbfbfbfbfbfbfbfbfb43
+8bd1e4af71fbfbfbb0e3fb6b4071fbe3b3cdfbfb8d408ffbfbd1fbfbfbcdfbfb8d408ffbfbd1b0
+e3fbb06871fbfbe96bafe9e4af71fbfbfbfbfbfb6bafe9e4af71e4fbfb4368b3fbcc8ffbfbfbcd
+fbfb43408fe4af71fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfb438bd1cd8b3cfbfbfbfbfbfbfbfbfb6b8bd1fbe3b3b0e3fb6b4071fbe3b3fb
+fbfbcdfbfb6b408ffbe3b3b0e3fb6b4071fbe3b3fbfbfbcdfbfb6b408ffbe3b3b0e3fb8d4071fb
+fbd1fbfbfb8dccfb6b403cfbe3b3fbfbfb438bd1fbcc8fb0e3fb6b4071fbe3b3fbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfb8dafe9fbe3b3fbfbfbfbfbfb438bd1e4af71b0e3fb6b4071fb
+e3b3fbfbfbfbfbfbfbfbfbb0e3fb8d4071fbfbd1fbfbfb438bd1cd8b3cfbfbfb6bafe9e4af71fb
+fbfbfbfbfb438bd1cd8b3cfbfbfbfbfbfbfbfbfbcdfbfb8d408ffbfbd1fbfbfbcdfbfb8d408ffb
+fbd1fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb92918e43403c878582fbfbfbfb
+fbfb87858243403c92918efbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfdfdfd
+ffffff2cc4f111bced8dd1b0fffffffffffffffffffffffffffffffffffff8ae82f48542f8b58d
+fffffffdfdfdfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc8f
+fbfbfb6bafe9cd8b3cfbfbfbe4fbfb6b68b3fbe3b3e4fbfb6b68b3e4e3b36b68b3fbe3b3fbfbfb
+6bafe9e4af71cdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfbfb8dccfbe4af71fbfbfbfbfbfbfbfbfb
+6bafe9e4af71cdfbfb8d408ffbfbd1fbfbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfbfbfbfbfb
+438bd1fbcc8ffbfbfbcdfbfb8d408ffbfbd1fbfbfb8dccfbcd8b3ce4fbfb6b68b3fbe3b3fbfbfb
+fbfbfbfbfbfbfbfbfb6bafe9cd8b3cfbfbfbe4fbfb6b68b3fbe3b3cdfbfb8d408ffbfbd1fbfbfb
+cdfbfb8d408ffbfbd1b0e3fbb06871fbfbe96bafe9e4af71fbfbfbfbfbfb6bafe9e4af71b0e3fb
+b06871fbfbe9fbfbfbfbfbfb6bafe9e4af71fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfb8dccfbb0683cfbfbe9fbfbfbfbfbfbfbfbfb6b8bd1fbe3b3
+8dccfbe4af71fbfbfbfbfbfbfbfbfb6bafe9e4af718dccfbe4af71fbfbfbfbfbfbfbfbfb6bafe9
+e4af716bafe9e4af71fbfbfbfbfbfbe4fbfb6b68b3fbe3b3fbfbfb438bd1fbcc8f8dccfbcd8b3c
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb6bafe9
+e4af718dccfbcd8b3cfbfbfbfbfbfbfbfbfbfbfbfbcdfbfb6b408ffbe3b3fbfbfb8dccfbcd8b3c
+fbfbfb6bafe9e4af71fbfbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfbfbcdfbfb8d408ffbfbd1
+fbfbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+87868343403c87858287858243403c878683fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfdfdfdffffff0abdfb05bcfbb5ebfefffffffffffffffffff48542f48542f485
+42f48542f48542f7a675fffffffdfdfdfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfb438bd1fbcc8ffbfbfbfbfbfb6bafe943403c43403c6b403cfbe3b3b0e3fbb06871fbfb
+e98dccfbe4af71fbfbfb6bafe9e4af71e4fbfb6b68b3fbe3b3fbfbfbfbfbfbfbfbfb8dccfbe4af
+71fbfbfbfbfbfbfbfbfb6bafe9e4af71cdfbfb8d408ffbfbd1fbfbfbcdfbfb8d408ffbfbd1fbfb
+fbfbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfbcdfbfb8d408ffbfbd1fbfbfb8dccfbcd8b3ce4fb
+fb4368b343403c43403c43403c43403cfbcc8ffbfbfb6bafe943403c43403c6b403cfbe3b3cdfb
+fb8d408ffbfbd1fbfbfbcdfbfb8d408ffbfbd1b0e3fbb06871fbfbe96bafe9e4af71fbfbfbfbfb
+fb6bafe9e4af71cdfbfb8d408ffbfbd1fbfbfbfbfbfb6bafe9e4af71fbfbfbfbfbfbfbfbfbfbfb
+fb8dccfb43403c43403cb0683cfbfbe9fbfbfbfbfbfbfbfbfb6bafe9e4af71fbfbfbfbfbfbfbfb
+fbfbfbfb6b8bd1fbe3b38dccfbe4af71fbfbfbfbfbfbfbfbfb6bafe9e4af718dccfbe4af71fbfb
+fbfbfbfbfbfbfb6bafe9e4af718dccfbcd8b3cfbfbfbfbfbfbe4fbfb6b68b3fbe3b3fbfbfb438b
+d1fbcc8f8dccfb43403c43403c43403c43403cb0683cfbfbe9fbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbb0e3fb6b4071fbe3b38dccfb43403c43403c43403c43403cb0683cfbfbe9cdfbfb4340
+8f43403c43403ccd8b3cfbfbfb6bafe9e4af71fbfbfbe4fbfb6b68b3fbe3b3fbfbfbfbfbfbfbfb
+fbcdfbfb8d408ffbfbd1fbfbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfb87868343403c43403b878683fbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfdfdfdffffff0bbefb05bcfbb6ecfeffffffffffffff
+fffff48542f48542f48542f48542f48542f7aa7bfffffffdfdfdfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfbfbfbfbfbfbfbfbfbfbcdfbfb8d408ffb
+fbd16bafe9e4af71fbfbfbcdfbfb8d408ffbfbd16bafe9e4af71fbfbfb6bafe9cd8b3cfbfbfbfb
+fbfbfbfbfbb0e3fb6b4071fbe3b3fbfbfbcdfbfb6b408ffbe3b3cdfbfb43408fcd8b3cfbfbfb8d
+ccfbb0683cfbfbe9fbfbfbfbfbfbfbfbfbfbfbfb438bd18d403cfbfbd1b0e3fb434071e4af71fb
+fbfb6bafe9cd8b3cfbfbfb438bd1fbcc8ffbfbfbe4fbfb6b68b3fbe3b3fbfbfbfbfbfbfbfbfbcd
+fbfb8d408ffbfbd1cdfbfb43408fcd8b3cfbfbfb8dccfbb0683cfbfbe9b0e3fbb06871fbfbe96b
+afe96b403cfbe3b3e4fbfb4368b3fbcc8fe4fbfb4368b3e4af71fbfbfbcdfbfb43408fe4af71fb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd1fb
+cc8ffbfbfbfbfbfb438bd143403c6b403cfbe3b3b0e3fb6b4071fbe3b3fbfbfbcdfbfb6b408ffb
+e3b3b0e3fb6b4071fbe3b3fbfbfbcdfbfb6b408ffbe3b3b0e3fb6b4071fbe3b3fbfbfb8dccfb6b
+403cfbe3b3fbfbfb438bd1fbcc8fb0e3fbb06871fbfbe9fbfbfb8dccfbcd8b3cfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbcdfbfb43408f6b403cfbe3b3fbfbfbb0e3fbb06871fbfbe9fbfbfb8dccfbcd
+8b3cfbfbfbfbfbfbfbfbfbfbfbfb6bafe9e4af71fbfbfb6bafe98d403cfbfbd1fbfbfb6bafe9cd
+8b3cfbfbfbfbfbfbfbfbfbcdfbfb43408fcd8b3cfbfbfb8dccfbb0683cfbfbe9fbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb87858242403c43403c878582fbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfdfdfdffffff35c9fc0ab2f9
+6ba4f6fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdfdfdfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd143403c43403ccd8b3ccdfbfb43408f
+43403c43403ce4af71cdfbfb6b408ffbe3b3fbfbfbfbfbfb438bd1fbcc8f6bafe9e4af71fbfbfb
+fbfbfb438bd143403c43403ce4af71fbfbfbb0e3fb43407143403c43403cfbcc8ffbfbfbcdfbfb
+8d408f8dccd143403c43403cfbcc8ffbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd1cdcc8f43408f
+43403cfbcc8f6bafe943403c6b403cfbe3b3fbfbfbfbfbfb438bd143403c43403ce4af71fbfbfb
+cdfbfb43408f43403c43403ce4af71fbfbfbcdfbfb8d408f8dccd143403c43403cfbcc8ffbfbfb
+b0e3fbb06871fbfbe96bafe9cdaf714368b343403cb0683cfbfbe9fbfbfbcdfbfb43408f43403c
+8d403c6bafb3e4af71fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfb6bafe9e4af71fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb0e3fb434071
+43403c43403cfbcc8ffbfbfbfbfbfbb0e3fb43407143403c43403cfbcc8ffbfbfbfbfbfb8dccfb
+43403c43403cb08b3c6b68b3fbe3b3fbfbfb438bd1fbcc8ffbfbfbb0e3fb43407143403c8d403c
+fbfbd1fbfbfbfbfbfbfbfbfbfbfbfbb0e3fb434071fbcc8ffbfbfbfbfbfbfbfbfbfbfbfbb0e3fb
+43407143403c8d403cfbfbd1fbfbfb6bafe943403c43403c8d403cfbfbd1fbfbfb6bafe9b0af71
+43408fcd8b3cfbfbfb438bd143403c43403ce4af71cdfbfb8d408f8dccd143403c43403cfbcc8f
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb87858243403c878683
+87868343403c878582fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfcfc
+fcffffff92cffb3752ec3846ead0d4fafffffffffffffffffffffffffdfdffffffffffffffffff
+fffffffffcfcfcfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc
+8ffbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb0e3fbb06871fbfbe9fbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb6bafe9e4af71fbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbcdfbfb8d408ffbfb
+d1fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb9291
+8e43403c878683fbfbfbfbfbfb87868343403c92918efbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfffffff9f9fe5662ed3543ea3b49eb959cf4cfd2fad1d4fa969df452
+5eede1e3fcfffffffffffffffffffbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfb438bd1fbcc8ffbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb6bafe9b0683cfbfbe9fb
+fbfbfbfbfb8dafe9fbe3b3fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb43
+8bd1fbcc8ffbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb8dccfbb0
+683cfbfbe9fbfbfbb0ccfbfbe3b3fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfb595753878683fbfbfbfbfbfbfbfbfbfbfbfb878683595753fbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfdfdfdffffffe8eafd5863ee3543ea3543ea
+3543ea3543ea3543ea3543ea6c76f0fffffffffffffcfcfcfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb0e3fb4340718d403cfbfbd1fbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb6bafe9cd8b3cfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb0e3fb8d4071fbfbd1
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfb8dccfb43403c43403c43403c8d403cfbfbd1fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfb438bd1fbcc8ffbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfb6bafe943403c43403cb0683cfbfbe9fbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbcdfbfb8d408ffbfbd1fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b4
+00fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfcfcfcffff
+fff9f9fea5acf65d69ee3c4aeb3a47ea5a66eea2a9f5f9f9fefffffffcfcfcfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfdfdfdfffffffffffffffffffffffffffffffffffffffffffffffffcfcfcfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfcfcfcfdfdfdfdfdfdfdfdfdfdfdfd
+fcfcfcfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4b400fbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbb5b4
+b400fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbb9b8b800fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbc9c8c800fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbd8d7d700fbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbf9
+f9f900fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfb00fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb00fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb
+fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb00030000000000
+}           \par
+{\pntext\f0 8.\tab}\b logo\b0  : This is a column in the database table that will store the filename of an image that will be displayed on the app or website. The supported image formats are jpg, png, and jpeg. The filename will be changed every time a new image is uploaded to ensure that no two files have the same name.\par
+
+\pard\ri-1620\sl240\slmult1\tx1080\tx9810\par
+9. \b language_Id \b0 : We will take the language name as input, but when we are storing it in the database, it will be stored in the language ID format. All the language information will be stored in the 'languages' table.\par
+\par
+10. \b currency_Id \b0 : We will take the currency name as input, but when we are storing it in the database, it will be stored in the currency ID format. All the currency information will be stored in the 'currencies' table.\par
+\par
+11. \b discount_Id\b0  : We will take the discount type as input, but when we are storing it in the database, it will be stored in the language ID format. All the language information will be stored in the 'discounts' table.\par
+\par
+12. \b\lang16393 licence_number\fs22  - \b0 Every shop have a licence number or registration number. So we are storing it here. Since it can contain number and character. That is why \b VARCHAR(25)\b0  is used.\par
+\par
+13. \b\fs24 GST No\fs22  :- \b0  Every shop have a GST number. The GST number is different for every one and it is a combination of characters and numbers. So we have used \b VARCHAR(15)\b0 . In India the length of a GST number is 15.\par
+\par
+14. \b\fs24 time_zone : \b0\fs22 Every country have different time. For setting the application time we are using this time_zone.\par
+\par
+14\fs24\lang9 . \b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\par
+\par
+15. \b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\par
+\par
+16. \b deleted_at\b0  DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\fs22\lang16393\par
+\par
+\par
+
+\pard\cf1\b\fs28\lang9\tab\tab\tab\tab BANKS TABLE\cf0\par
+\fs24 Table creation query -\b0\par
+\par
+\fs22\lang16393 CREATE TABLE banks\par
+(\par
+\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    \tab name CHAR(50) NOT NULL,\par
+    \tab ifsc_code VARCHAR(11) NOT NULL,\par
+    \tab address VARCHAR(50),\par
+\tab account_number INT NOT NULL UNIQUE,\par
+    \tab account_type ENUM('Savings', 'Current'),\par
+    \tab holder_name CHAR(25),\par
+    \tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    \tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+  \tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\par
+\par
+\b Use\b0  :- Since a shop can have more than one account and they can be in different banks. To store all this in one table. For that we are creating this bank table.\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\b\fs24 id \fs22 - \b0\fs24\lang9 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\line\par
+{\pntext\f0 2.\tab}\b\fs24\lang9 name\b0  - \fs22 This is the column in the database where we are storing the bank name. The data type we are using is \b CHAR\b0 , as banks names are typically composed of letters only and  not numbers.\lang16393\line\par
+{\pntext\f0 3.\tab}\b\fs24\lang9 ifsc_code\b0   :- This is code typically given to every bank in India. Every bank have a different code. The length of the code is \b 11\b0  digits. And it is a combination of characters and number. That is why we have used \b VARCHAR(11)\b0 .\line\par
+{\pntext\f0 4.\tab}\b address\b0  : This is a column in the database table that will store the address of the bank. The data type is VARCHAR(150), which allows for up to 150 characters in the address. The address can contain a combination of plot number, street name, area, district, state, country, and pincode.\line\par
+{\pntext\f0 5.\tab}\b\lang16393 account_type - \b0 This column will store the type of account(Savings, currents). Since the value will be two of them. For that reason we are using \b ENUM \b0 datatype. And specified the values in it. \lang9\line\par
+{\pntext\f0 6.\tab}\b\lang16393 holder_name - \b0 This column will have the account holder name. Since the name only contain character. For that we are using \b CHAR\b0  datatype.\lang9\line\par
+{\pntext\f0 7.\tab}\b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 8.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 9.\tab}\b deleted_at\b0  DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\fs22\lang16393\par
+
+\pard\tab\tab\par
+\tab\tab\tab\tab\cf1\b\fs28 PASSWORD POLICIES TABLE\par
+\cf0\fs24\lang9 Table creation query -\b0\par
+\par
+\fs22\lang16393 CREATE TABLE password_policies\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    name VARCHAR(50) NOT NULL,\par
+    value VARCHAR(50) NOT NULL,\par
+\fs24\lang9    status ENUM ('active', 'inactive') DEFAULT 'active',\fs22\lang16393\par
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\par
+\par
+\b Use\b0  :- Since a password contain more than one functionalities. For ex length, type, etc. So we are storing it in different table. For better  use, easy accessibility, easy change and delete. In this table we also storing the condition for login time and other functionalities. \par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\b\fs24 id \fs22 - \b0\fs24\lang9 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\line\par
+{\pntext\f0 2.\tab}\b\fs24\lang9 name\b0  - \fs22 This is the column in the database where we are storing the functionalty name. The data type we are using is \b\fs24 VARCHAR\b0\fs22 , as functioanalites names are typically composed of letters and numbers.\lang16393\line\par
+{\pntext\f0 3.\tab}\b\fs24\lang9 value\b0  :- Here we will store the regex value or code for checking the input meets our desired intention. Since the regex value length varies a lot and it is a combination of characters and numbers. That is why \b VARCHAR(50)\b0  is used.\line\par
+{\pntext\f0 4.\tab}\b status :-  \b0 This is the column in the database which will store the status of the particular password policy. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 5.\tab}\b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 6.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 7.\tab}\b deleted_at\b0  DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\fs22\lang16393\par
+
+\pard\par
+\tab\tab\tab\tab\cf1\b\fs28 incorrect_password_count TABLE\fs22\par
+\fs28\par
+
+\pard\fi-270\li270\cf0\b0\fs22 1. In this table we will store the number of incorrect password attempt done by the user while login.\par
+2. This will be usefull. Because we block a user from login after number of incorrect password attempt. The attempt is stored in the password_policies table. \cf1\b  \line\fs28\par
+
+\pard\cf0\fs24\lang9 Table creation query -\b0\par
+\par
+\fs22\lang16393 CREATE TABLE incorrect_password_count\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    user_Id INT,\par
+    FOREIGN KEY (user_Id) REFERENCES users(id),\par
+    numberofattempt INT NOT NULL,\par
+    lastincorrect_attempt DATETIME,\par
+    created_at DATETIME ,\par
+    updated_at DATETIME DEFAULT NULL ,\par
+    deleted_at DATETIME DEFAULT NULL\par
+);\par
+\par
+
+\pard\fi-270\li270\fs24\lang9 1.\b  id :- \b0 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\line\par
+2. \b user_Id - \b0 This is a column in the database that will store the \b user_Id\b0  from the users table. This column is a foreign key. Datatype is \b INT\b0 .\line\par
+3. \b\lang16393 numberofattempt\b0  - This is the column in the database that will store the number of incorrect password attempt made by the user. \lang9 Datatype is \b INT\b0 .\line\par
+4. \b\lang16393 lastincorrect_attempt\b0\lang9  - This is the column in the database that will store the time of the last incorrect attempt. On the basis of this time we will block the user.\line\par
+
+\pard\fi-270\li270\sl240\slmult1 5. \b created_at\b0   \b DATETIME\b0  - This column is defined with the DATETIME data type, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+6. \b updated_at\b0   \b DATETIME DEFAULT NULL \b0 - This column is also defined with the DATETIME data type and has a default value of NULL.\b\line\par
+
+\pard\fi-270\li270 7.\tab deleted_at  DATETIME DEFAULT NULL\b0  - This column is similar to the updated_at column, but it will be used to indicate. By setting the default value to NULL, the column will be empty for all active rows.\b\line\b0\fs22\lang16393\par
+
+\pard\tab\tab\tab\tab\tab\cf1\b\fs28 ROLES TABLE\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\sl240\slmult1\highlight3\fs24\lang9 Role Page Settings :-\highlight2\b0\fs20\line\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\li720\sl240\slmult1\highlight0\b\fs28     \cf3\b0\fs24 This page will used to enter the role name or designation name. That will be\cf0\fs22\par
+
+\pard\sl240\slmult1\cf3\fs24\tab        given to a particular user.\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\li720\sl240\slmult1     For ex :- Casier, Manager, Helper, etc.\cf0\fs22\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\li720\sl240\slmult1\tx1080\cf3\fs24     For every role responsibilites or work are different.\cf0\fs22\par
+{\pntext\f1\'B7\tab}\cf3\fs24\tab\cf0\fs22 This will be provided by the admin users.\cf3\fs24  \cf0\fs22\par
+{\pntext\f1\'B7\tab}\tab This things will be there on the role table.\par
+
+\pard\sl240\slmult1\tab\tab 1. id\par
+\tab\tab 2. role name\par
+
+\pard\tab\tab 3. status\b\fs24\par
+\line Table creation query -\par
+\b0\par
+
+\pard\sl240\slmult1\tx360\tx1080\tab\tab CREATE TABLE roles\par
+\tab\tab (\par
+                      id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+                      role_name VARCHAR(30),\par
+                      status ENUM ('active', 'inactive') DEFAULT 'active',\par
+\tab\tab     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+                      updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+\tab\tab     deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+\tab\tab );\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\b id :- \b0 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row\line\par
+{\pntext\f0 2.\tab}\b role_name\b0  :- Name of the role or designation will be stored in this column. Basically the name of the designation or role only contain character. Some time it may contain the number. That is why we have used the \b VARCHAR(30)\b0  as a datatype.\line\par
+{\pntext\f0 3.\tab}\b status :-  \b0 This is the column in the database which will store the status of the particular role. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 4.\tab}\b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP :-  This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 5.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP :- This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 6.\tab}\b deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\fs22\lang16393\par
+
+\pard\par
+\tab\tab\tab\tab\tab\cf1\b\fs28 USERS TABLE\cf0\b0\fs22\par
+
+\pard\sl240\slmult1\cf1\highlight3\b\fs28\lang9 User Page Feilds :-\par
+\cf0\highlight0\fs32\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-284\li568\sl240\slmult1\b0\fs24 This page is for entering the users information or registering the user information into the database.\par
+{\pntext\f0 2.\tab}The users are those persons who will be related to the management. Those who will use the software. \par
+{\pntext\f0 3.\tab}The user can be of anytype. for ex admin, manager, etc. Customer is not here. Because they are no where related to management of the shop or outlet.\par
+
+\pard 
+{\pntext\f0 4.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-284\li568\sl240\slmult1\tx284 Only the admin can enter the user information into the database. All the employee details will be there in the database in the user table.\par
+
+\pard 
+{\pntext\f0 5.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-284\li568\sl240\slmult1 Admin can see the list of all the users from the page only. There is the option as well.\par
+{\pntext\f0 6.\tab}The details which will be required for registering the user are as follow\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi900\li720\sl240\slmult1\fs22 First name (M)\par
+{\pntext\f1\'B7\tab}Last name (M)\par
+{\pntext\f1\'B7\tab}Email (M)\par
+{\pntext\f1\'B7\tab}Password (M)\par
+{\pntext\f1\'B7\tab}Gender\par
+{\pntext\f1\'B7\tab}Phone-No (M)\par
+{\pntext\f1\'B7\tab}Address (M)\par
+{\pntext\f1\'B7\tab}Id _proof_type (M)\par
+{\pntext\f1\'B7\tab}Id_proof_Image (M)\par
+{\pntext\f1\'B7\tab}Id_proof_No (M)\par
+{\pntext\f1\'B7\tab}Description\par
+{\pntext\f1\'B7\tab}Profile photo\par
+{\pntext\f1\'B7\tab}Is Admin (M)\par
+{\pntext\f1\'B7\tab}Status (M)\line\fs24\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li900\sl240\slmult1\tx1080  After filling all the this information the software will go on store the entered in the database.\par
+{\pntext\f0 2.\tab} This will happen when the user click on the \b "SUBMIT"\b0  button. If the user clicks on  \b "RESET"\b0  button then the filled information will get erased. \par
+{\pntext\f0 3.\tab}Profile photo will be in the jpeg, jpg or png format.\par
+{\pntext\f0 4.\tab}Email validation will be done by the software\par
+{\pntext\f0 5.\tab}Password validation will be done by the software. (Password format - \b asdf@123\b0 )\par
+
+\pard\sl240\slmult1\tx1080\par
+
+\pard\b Users table \b0 creation query is :- \par
+\par
+
+\pard\sl240\slmult1\tx1080\tab CREATE TABLE users\par
+\tab ( \par
+\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+                  first_name VARCHAR(20) NOT NULL,\par
+\tab last_name VARCHAR(20) NOT NULL,\par
+                  email VARCHAR(150) NOT NULL,\par
+\tab password VARCHAR(50) NOT NULL,\par
+\tab gender ENUM('Male', 'Female'),\par
+\tab phone INT NOT NULL,\par
+\tab address VARCHAR(50) NOT NULL,\par
+\tab id_proof_type VARCHAR(50) NOT NULL,\par
+\tab id_proof_image VARCHAR(50) NOT NULL,\par
+\tab id_proof_no VARCHAR(20) NOT NULL,\par
+\tab description VARCHAR(50),\par
+\tab profile_image VARCHAR(50),\par
+\tab status ENUM('active', 'inactive') DEFAULT 'active',\par
+\tab isadmin ENUM('yes', 'no'),\par
+\tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+\tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+\tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+\tab );\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\b\fs28 id : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\line\par
+{\pntext\f0 2.\tab}\b first_name : \b0 This is a column in the database  which will store first name of the user. The data type is VARCHAR(20). The character set for first name is 20 which is sufficient for entering the firstname of user.\line\par
+{\pntext\f0 3.\tab}\b last_name : \b0 This is a column in the database which will store last name of the user. The data type is VARCHAR(20). The character set for last name is 20 which is sufficient for entering the last name of user.\fs22\lang16393\line\par
+{\pntext\f0 4.\tab}\b\fs24\lang9 email : \b0 This is a column in the database which will store the email address of the user. The data type is \b VARCHAR(35)\b0 , which allows for up to \b 35\b0  characters in the email address. Email addresses typically contain both characters and numbers, and they are unique to each user.\line\par
+{\pntext\f0 5.\tab}\b password : \b0 This is the column in the database which will store the password of the particular user. The password will be in the bcrypt format. So no one see it. Only the admin and that particular user can have the password.  The data type is VARCHAR(50), which allows for up to 50 characters in the password. The format for password is \b asdf@123\b0 .\line\par
+{\pntext\f0 6.\tab}\b gender - \b0 This is the column in the database which will store the gender of the particular user. It can be either \b male\b0  or \b female\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 7.\tab}\b phone \b0 : This is a column in the database table that will store the phone number of the user. The data type is INT, which allows for only numeric values in the phone number. The length of the phone number is not defined because different countries have different phone number formats.\line\par
+{\pntext\f0 8.\tab}\b address - \b0 This is the column in the database which will store the address of the particular user. Every employer store the users address for security purpose.  The data type is \b VARCHAR(50)\b0 , which allows for up to 50 characters in the address. Because the address typically contain both characters and numbers.\line\par
+{\pntext\f0 9.\tab}\b id_proof_type - \b0 This is the column in the database which will store the id proof type (adhar card, voter card, etc ) of the particular user.  Every employer store the users id proof for security purpose. The type is \b VARCHAR(50)\b0  because we are store the name or type of the id proof.\fs22\lang16393\line\par
+{\pntext\f0 10.\tab}\b\fs24\lang9 id_proof_image_name - \b0 This is a column in the database table that will store the filename of an id proof that will be provide by the user. Since we are only storing the image name we need VARCHAR(50) datatype. Because the image name can contain both character and number.\fs22\lang16393\line\par
+{\pntext\f0 11.\tab}\b\fs24\lang9 id_proof_no\b0  - This is a column in the database table that will store the registration number of the id proof that will be provide by the user. Every employer store the users id proof for security purpose. Since we are storing the registration number of the id proof so we need VARCHAR(50) datatype. Because the registration number can contain both character and number.\fs22\lang16393\line\par
+
+\pard 
+{\pntext\f0 12.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-450\li810\sl240\slmult1\tx720\tx1080\b\fs24\lang9 description -\b0  Datatype VARCHAR(50). Because it will contain some remark for the user by the admin. It is not a mandatory feild.\fs22\lang16393\line\par
+
+\pard 
+{\pntext\f0 13.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\fs24\lang9  \b profile_image_name - \b0  This is a column in the database table that will store the filename of profile photo of the user. This is not the mandatory one.  Since we are storing the registration number of the id proof so we need VARCHAR(50) datatype. Because the registration number can contain both character and number.\fs22\lang16393\line\par
+
+\pard 
+{\pntext\f0 14.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\b\fs24\lang9 status\b0  - \b  \b0 This is the column in the database which will store the status of the particular user. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 15.\tab}\b isadmin - \b0  This is the column in the database which will store type of the user. Whether it is a admin or normal user for every particular user. It can be either \b YES\b0  or \b NO\b0 . We have used enum datatype because the value will be only one of the specified one.\line\par
+
+\pard 
+{\pntext\f0 16.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs22\lang16393\line\par
+{\pntext\f0 17.\tab}\b\fs24\lang9 updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\fs22\lang16393\line\par
+{\pntext\f0 18.\tab}\b\fs24\lang9 deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\fs22\lang16393\par
+
+\pard\sl240\slmult1\tx1080\par
+\tab\tab\tab\tab\cf1\b\fs28 employees TABLES\line\par
+\cf0\b0\fs24\lang9 1. The employee table will have the data of the all the employee. Who are working\par
+\line 2. We need role as to add a employee.\line\par
+
+\pard\sl240\slmult1 3. Most of the information for the employee is important and mandatory.\b\par
+\par
+\b0 4. Information required for adding into employee table and registering new employee.\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi900\li720\sl240\slmult1\fs22 First name (M)\par
+{\pntext\f1\'B7\tab}Last name (M)\par
+{\pntext\f1\'B7\tab}Gender\par
+{\pntext\f1\'B7\tab}Phone-No (M)\par
+{\pntext\f1\'B7\tab}Email (M)\par
+{\pntext\f1\'B7\tab}Password (M)\par
+{\pntext\f1\'B7\tab}blood_group\par
+{\pntext\f1\'B7\tab}designation (M)\par
+{\pntext\f1\'B7\tab}description\par
+{\pntext\f1\'B7\tab}address_1\par
+{\pntext\f1\'B7\tab}address_2\par
+{\pntext\f1\'B7\tab}city\par
+{\pntext\f1\'B7\tab}country\par
+{\pntext\f1\'B7\tab}zip_code\par
+{\pntext\f1\'B7\tab}rate_type\par
+{\pntext\f1\'B7\tab}hour_rate/Salary\par
+{\pntext\f1\'B7\tab}Profile photo\par
+{\pntext\f1\'B7\tab}Id _proof_type (M)\par
+{\pntext\f1\'B7\tab}Id_proof_Image (M)\par
+{\pntext\f1\'B7\tab}Id_proof_No (M)\par
+{\pntext\f1\'B7\tab}status\lang16393\line\par
+
+\pard\sl240\slmult1\b\fs24\lang9 Employee table \b0 creation query is :-\par
+\par
+CREATE TABLE employees\par
+(\par
+\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+\tab first_name VARCHAR(20) NOT NULL,\par
+\tab last_name VARCHAR(20) NOT NULL,\par
+    \tab gender ENUM('Male', 'Female'),\par
+    \tab phone INT NOT NULL,\par
+    \tab email VARCHAR(150) NOT NULL,\par
+\tab password VARCHAR(50) NOT NULL,\par
+    \tab blood_group ENUM('A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'),\par
+    \tab role_Id INT,\par
+    \tab FOREIGN KEY(role_Id) REFERENCES roles(id),\par
+    \tab description VARCHAR(50),\par
+\tab address_line1 VARCHAR(50) NOT NULL,\par
+\tab address_line2 VARCHAR(50) NOT NULL,\par
+    \tab city VARCHAR(50) NOT NULL,\par
+    \tab country VARCHAR(50) NOT NULL,\par
+\tab zip_code VARCHAR(50) NOT NULL,\par
+    \tab rate_type ENUM('Hourly Rate', 'Salary'),\par
+    \tab `hour_rate/Salary` INT NOT NULL,\par
+    \tab profile_image VARCHAR(50),\par
+    \tab id_proof_type VARCHAR(50) NOT NULL,\par
+\tab id_proof_image VARCHAR(50) NOT NULL,\par
+\tab id_proof_no VARCHAR(20) NOT NULL,    \par
+\tab status ENUM('active', 'inactive') DEFAULT 'active',\par
+\tab created_at DATETIME,\par
+\tab updated_at DATETIME DEFAULT NULL,\par
+\tab deleted_at DATETIME DEFAULT NULL \par
+);\par
+\par
+\fs22\par
+\lang16393 1. \b\fs24\lang9 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\par
+\line\lang1033 2. \b\lang9 first_name : \b0 This is a column in the database  which will store first name of the user. The data type is VARCHAR(20). The character set for first name is 20 which is sufficient for entering the firstname of user.\line\par
+3. \b last_name : \b0 This is a column in the database which will store last name of the user. The data type is VARCHAR(20). The character set for last name is 20 which is sufficient for entering the last name of user.\par
+\par
+4. \b gender - \b0 This is the column in the database which will store the gender of the particular user. It can be either \b male\b0  or \b female\b0 . We have used enum datatype because the value will be only one of the specified two.\fs22\lang16393\par
+\par
+5. \b\fs24\lang9 phone \b0 : This is a column in the database table that will store the phone number of the user. The data type is INT, which allows for only numeric values in the phone number. The length of the phone number is not defined because different countries have different phone number formats.\par
+\par
+6. \b email : \b0 This is a column in the database which will store the email address of the employees. The data type is \b VARCHAR(35)\b0 , which allows for up to \b 35\b0  characters in the email address. Email addresses typically contain both characters and numbers, and they are unique to each user.\par
+\par
+7. \b password : \b0 This is the column in the database which will store the password of the particular user. The password will be in the bcrypt format. So no one see it. Only the admin and that particular user can have the password.  The data type is VARCHAR(50), which allows for up to 50 characters in the password.\par
+\par
+8. \b blood_group - \b0 This is the column in the database. \lang16393 Where we will store the blood group of the employees. The datatype is ENUM because the value will one of the specified 8.\fs22\par
+\par
+9. \b\fs24\lang9 role_Id - \b0 This is a column in the database that will store the \b role_Id\b0  from the roles table. This column is a foreign key. Datatype is \b INT\b0 .\par
+\par
+10. \b description - \b0 Datatype VARCHAR(50). Because it will contain some remark for the user by the admin. It is not a mandatory feild.\par
+\par
+11. \b address_line1 - \b0 This is the column in the database which will store the address of the particular employees. Every employer store the employees address for security purpose.  The data type is \b VARCHAR(50)\b0 .\line\line 12. \b address_line2 - \b0 This is the column in the database which will store the address of the particular employees. Every employer store the employees address for security purpose. The data type is \b VARCHAR(50)\b0 .\par
+\par
+13. \b city - \b0 Datatype VARCHAR(50). Because it will contain city of the employee by the admin. It is a mandatory feild.\fs22\lang16393\line\par
+\fs24\lang9 14. \b country - \b0 Datatype VARCHAR(50). Because it will contain country of the employee by the admin. It is a mandatory feild.\par
+\par
+15. \b zip_code - \b0 Datatype VARCHAR(50). Because it will contain zip code of the employee by the admin. It is a mandatory feild.\par
+\par
+16. \b rate_type -\par
+\par
+\b0 17. \b hour_rate/Salary - \par
+\par
+\b0 18. \b profile_image - \b0 This is a column in the database table that will store the filename of profile photo of the employee. This is not the mandatory one. Datatype is \b VARCHAR(50)\b0 .\par
+\par
+19. \b id_proof_type - \b0 This is the column in the database which will store the id proof type (adhar card, voter card, etc ) of the particular employees.  Every employer store the employee id proof for security purpose. The type is \b VARCHAR(50)\b0  because we are store the name or type of the id proof.\par
+\par
+20. \b id_proof_image - \b0 This is a column in the database table that will store the filename of an id proof that will be provide by the employee. Since we are only storing the image name we need \b VARCHAR(50)\b0  datatype. Because the image name can contain both character and number.\par
+\par
+21. \b id_proof_no\b0  - This is a column in the database table that will store the registration number of the id proof that will be provide by the employee. Every employer store the users id proof for security purpose. Since we are storing the registration number of the id proof so we need \b VARCHAR(50)\b0  datatype. Because the registration number can contain both character and number.\par
+\par
+22. \b status\b0  - \b  \b0 This is the column in the database which will store the status of the particular employee. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\par
+\par
+
+\pard\fi-360\li360\sl240\slmult1 23. \b created_at\b0   \b DATETIME\b0  - This column is defined with the DATETIME data type, which will be automatically set by the database engine when a new row is inserted into the table.\par
+\par
+24. \b updated_at\b0   \b DATETIME DEFAULT NULL \b0 - This column is also defined with the DATETIME data type and has a default value of NULL.\b\par
+\par
+\b0 25. \b deleted_at  DATETIME DEFAULT NULL\b0  - This column is similar to the updated_at column, but it will be used to indicate. By setting the default value to NULL, the column will be empty for all active rows.\par
+\cf1\b\fs28\tab\tab\tab\tab\tab\par
+
+\pard\sl240\slmult1\cf0\b0\fs22\lang16393\line\line\line\b\fs24\lang9  \b0\fs22\lang16393\line\par
+
+\pard\sl240\slmult1\tx1080\tab\tab\tab\tab\cf1\b\fs28 CUSTOMERS TABLES\par
+
+\pard\sl240\slmult1\cf0\b0\fs24\lang9\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\sl240\slmult1 For customer registeration only phone number is most mandatory information.\par
+{\pntext\f0 2.\tab}The details which will be required for registering the customers are as follow\par
+
+\pard\sl240\slmult1\tab 1. Name\par
+\tab 2. Phone Number (M)\par
+\tab 3. email\par
+
+\pard\sl240\slmult1\tx1080\cf1\b\fs28\lang16393\line\cf0\fs24\lang9 Customer table \b0 creation query is :-\par
+\par
+CREATE TABLE customers(\par
+\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\tab\par
+\tab name CHAR(255) NOT NULL,\par
+\tab type ENUM('Walkin', 'Permanent'),\par
+\tab email VARCHAR(150) UNIQUE,\par
+\tab phone INT NOT NULL,\par
+\tab age INT,\par
+\tab status ENUM('active', 'inactive') DEFAULT 'active',\par
+\tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+\tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+\tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\tab ); \fs22\lang16393\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\b\fs24\lang9 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\line\par
+{\pntext\f0 2.\tab}\b\fs24\lang9 name : \b0 This is a column in the database which will store name of the customer. The data type is \b CHAR(20) \b0 because the name only contain characters. The character set for name is 20 which is sufficient for entering the name of customer.\line\par
+{\pntext\f0 3.\tab}\b type :- \b0 This is the column in the database which will store the type of the particular customer. It can be either \b Walkin\b0  or \b Permanent\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 4.\tab}\b email : \b0 This is a column in the database which will store the email address of the customer. The data type is \b VARCHAR(35)\b0 , which allows for up to \b 35\b0  characters in the email address. Email addresses typically contain both characters and numbers, and they are unique to each user. It is not a mandatory field.\line\par
+{\pntext\f0 5.\tab}\b phone \b0 : This is a column in the database table that will store the phone number of the customer. The data type is \b INT\b0 , which allows for only numeric values in the phone number. The length of the phone number is not defined because different countries have different phone number formats.\line\par
+{\pntext\f0 6.\tab}\b age\b0  - This is a column in the database table that will store the age of the customer. The data type is \b INT\b0 , which allows for only numeric values in the age.\line\par
+{\pntext\f0 7.\tab}\b status\b0  - \b  \b0 This is the column in the database which will store the status of the particular customer. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\fs22\lang16393\line\par
+{\pntext\f0 8.\tab}\b\fs24\lang9 created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs22\lang16393\line\par
+{\pntext\f0 9.\tab}\b\fs24\lang9 updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\fs22\lang16393\line\par
+{\pntext\f0 10.\tab}\b\fs24\lang9 deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\line\line\fs22\lang16393\tab\tab\tab\tab\cf1\b\fs28 MANUFACTURERS TABLE\cf0\b0\fs22\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\tx1080 In this table we are storing the company or manufacturer details. \par
+{\pntext\f1\'B7\tab}Every products have different manufacturer.\par
+{\pntext\f1\'B7\tab}So for keeping there details we creating this table.\par
+
+\pard\sl240\slmult1\tx1080  \par
+\b\fs24\lang9 Table creation query -\line\par
+\b0 CREATE TABLE manufacturers\par
+(\par
+   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+   name CHAR(50) NOT NULL,\par
+   email VARCHAR(150) UNIQUE NOT NULL, \par
+   phone INT NOT NULL,\par
+   address1 VARCHAR(50),\par
+   fax INT UNIQUE,\par
+   state CHAR(20),\par
+   country CHAR(20),\par
+   mobile INT NOT NULL,    \par
+   email1 VARCHAR(150) UNIQUE,\par
+   contact INT,\par
+   address2 VARCHAR(50),\par
+   city CHAR(20),\par
+   zip INT,\par
+   pre_bal INT,\par
+   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+   updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+   deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\sl240\slmult1\tx1080\b id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\line\par
+{\pntext\f0 2.\tab}\b\fs24 name : \b0\lang9 This is a column in the database which will store name of the manufacturer. The data type is \b CHAR(50) \b0 because the name only contain characters. The character set for name is 50 which is sufficient for entering the name of manufacturer. It is a mandatory field.\fs22\lang16393\line\par
+{\pntext\f0 3.\tab}\b\fs24\lang9 email : \b0 This is a column in the database which will store the priamary email address of the manufacturer. The data type is \b VARCHAR(35)\b0 , which allows for up to \b 35\b0  characters in the email address. Email addresses typically contain both characters and numbers, and they are unique to each manufacturer. It is a mandatory field.\fs22\lang16393\line\par
+{\pntext\f0 4.\tab}\b\fs24\lang9 phone - \b0 This is a column in the database table that will store the primary phone number of the manufacturer. The data type is \b INT\b0 , which allows for only numeric values in the phone number. The length of the phone number is not defined because different countries have different phone number formats. It is a madatory fields.\line\par
+{\pntext\f0 5.\tab}\b address1 - \b0 This is the column in the database which will store the primary address of the particular manufacturer. Every admin store the manufacturer address for security purpose.  The data type is \b VARCHAR(50)\b0 , which allows for up to 50 characters in the address. Because the address typically contain both characters and numbers. It is not a mandatory field.\line\par
+{\pntext\f0 6.\tab}\b fax - \b0 This is the column in the database which will store the fax machine number. Every employer store the fax number for sending related things.  The data type is \b INT\b0 , which allows for up to 50 numbers of the fax number. Because the fax number typically contain numbers only. It is not a mandatory field.\line\par
+{\pntext\f0 7.\tab}\b state - \b0 This is the\b  \b0 columns in which we storing the state name where the manufacurer is located. Since the state name does not contain number we are using \b CHAR\b0  datatype(20). It is not a mandatory field.\line\par
+{\pntext\f0 8.\tab}\b country - \b0 This is the\b  \b0 columns in which we storing the country name where the manufacturer is located. Since the country name does not contain number we are using \b CHAR\b0  datatype(20). It is not a mandatory field.\line\par
+{\pntext\f0 9.\tab}\b mobile - \b0 This is a column in the database table that will store the secondary phone number of the manufacturer. The data type is \b INT\b0 , which allows for only numeric values in the phone number. The length of the phone number is not defined because different countries have different phone number formats. It is a madatory fields.\line\par
+{\pntext\f0 10.\tab}\b email1 - \b0 This is a column in the database which will store the secondary email address of the manufacturer. The data type is \b VARCHAR(35)\b0 , which allows for up to \b 35\b0  characters in the email address. Email addresses typically contain both characters and numbers, and they are unique to each manufacturer. It is not a mandatory field.\fs22\lang16393\line\par
+{\pntext\f0 11.\tab}\fs24\lang9  \b contact - \b0 This is a column in the database table that will store the tertiary phone number of the manufacturer. The data type is \b INT\b0 , which allows for only numeric values in the phone number. The length of the phone number is not defined because different countries have different phone number formats. It is not a madatory fields.\line\par
+{\pntext\f0 12.\tab}\b address2 - \b0  This is the column in the database which will store the secondary address of the particular manufacturer. Every admin store the manufacturer address for security purpose.  The data type is \b VARCHAR(50)\b0 , which allows for up to 50 characters in the address. Because the address typically contain both characters and numbers. It is not a mandatory field.\line\par
+{\pntext\f0 13.\tab}\b city - \b0 This is the\b  \b0 columns in which we storing the city name where the manufacturer is located. Since the city name does not contain number we are using \b CHAR\b0  datatype(20). It is not a mandatory field.\line\par
+{\pntext\f0 14.\tab}\b zip\b0  - This is the\b  \b0 columns in which we storing the zip code where the manufacturer is located. Since the zip code does not contain number we are using \b INT\b0  datatype(20). Every area have specific zip code. It is not a mandatory field.\fs22\lang16393\line\par
+{\pntext\f0 15.\tab}\b\fs24\lang9 pre_bal\b0  :-\fs22\lang16393\line\fs24\lang9  \fs22\lang16393\par
+{\pntext\f0 16.\tab}\b\fs24\lang9 created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs22\lang16393\line\par
+{\pntext\f0 17.\tab}\b\fs24\lang9 updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\fs22\lang16393\line\par
+{\pntext\f0 18.\tab}\b\fs24\lang9 deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\line\line\tab\tab\tab\tab\cf1\b\fs32 TAX SETTINGS\cf0\b0\fs22\lang16393\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\sl240\slmult1\tx1080\fs24\lang9 In this table we are storing the taxation value and taxation name. \fs22\lang16393\par
+{\pntext\f1\'B7\tab}\fs24\lang9 We will store the name of the TAX.\fs22\lang16393\par
+{\pntext\f1\'B7\tab}\fs24 We must store the percentage of taxation as well.\fs22\par
+
+\pard\sl240\slmult1\tx1080\par
+\b\fs24\lang9 Table creation query -\par
+\b0\fs22\lang16393\par
+\tab CREATE TABLE taxations\par
+\tab (\par
+    \tab\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+   \tab\tab name CHAR(15) NOT NULL,\par
+    \tab\tab percentage DECIMAL(2,2) NOT NULL, \par
+   \tab\tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    \tab\tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    \tab\tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+\tab );\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\b\fs24\lang9 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\line\par
+{\pntext\f0 2.\tab}\b\fs24 name : \b0\lang9 This is a column in the database which will store name of the tax. The data type is \b CHAR(15) \b0 because the name only contain characters. The character set for name is 15 which is sufficient for entering the name of manufacturer. It is a mandatory field.\fs22\lang16393\line\par
+{\pntext\f0 3.\tab}\b\fs24\lang9 percentage\b0  : This column will store the percentage value of that particular tax name. The value will be in number and that can contain decimal values. That is why we are using \b DECIMAL \b0 datatype\b .\b0\fs22\lang16393\line\b\fs24\lang9  \b0\fs22\lang16393\par
+{\pntext\f0 4.\tab}\b\fs24\lang9 created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs22\lang16393\line\par
+{\pntext\f0 5.\tab}\b\fs24\lang9 updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 6.\tab}\b deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\line\fs22\lang16393\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\tx1080\fs24\lang9 we have to create new table for tax breakdown\fs22\lang16393\par
+{\pntext\f1\'B7\tab}\fs24\lang9 For ex, If GST is 5 % then it will be break into two part. SGST and CGST and both will have 2.5 % respectively.\fs22\lang16393\par
+{\pntext\f1\'B7\tab}\fs24\lang9 So we will store the breakdown values in this table.\fs22\lang16393\par
+
+\pard\sl240\slmult1\tx1080\par
+\b\fs24\lang9 Table creation query -\line\par
+\b0      CREATE TABLE tax_details\par
+     (\par
+    \tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+   \tab taxation_Id INT,\par
+        \tab FOREIGN KEY (taxation_Id) REFERENCES taxations(id),\par
+        \tab value1 DECIMAL(2,2) NOT NULL,\par
+        \tab value2 DECIMAL(2,2) NOT NULL, \par
+   \tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    \tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    \tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+     );\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\b id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\line\par
+{\pntext\f0 2.\tab}\b taxation_Id : \b0 This column will have parent taxation Id. We are using it as a foreign key over here. We have used datatype \b INT. \b0\line\par
+{\pntext\f0 3.\tab}\b value1 \b0 - \b  \b0 This column will have \b value2\b0  percentage. Which will be the any percent of total tax value. Since the value can be in decimal and it is a percentage. That is why we are using \b DECIMAL \b0 datatype. \line\par
+{\pntext\f0 4.\tab}\b cgst - \b0 This column will have \b value2\b0  percentage. Which will be the any percent of total tax value. Since the value can be in decimal and it is a percentage. That is why we are using \b DECIMAL \b0 datatype. \line\par
+{\pntext\f0 5.\tab}\b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP : This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs22\lang16393\line\par
+{\pntext\f0 6.\tab}\b\fs24\lang9 updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 7.\tab}\b deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP : This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\line\fs22\lang16393\par
+
+\pard\sl240\slmult1\tx1080\cf1\b\fs28\lang9\tab\tab\tab\tab USER_ROLE TABLE\line\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\tx1080\cf0\b0\fs24\lang16393 This table will storing the primary key of both users and roles table.\fs22\par
+{\pntext\f1\'B7\tab}\fs24 Every user will be assigned a role. \fs22\par
+{\pntext\f1\'B7\tab}\fs24 So for keeping track of that user and their particular role. This table will be used.\fs22\par
+
+\pard\sl240\slmult1\tx1080\fs24\line\b\lang9 Table creation query -\line\tab\par
+
+\pard\li720\sl240\slmult1\tx1080\b0\tab CREATE TABLE user_roles\par
+\tab (\par
+    \tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    \tab user_Id INT,\par
+    \tab FOREIGN KEY(user_Id) REFERENCES users(id),\par
+    \tab role_Id INT,\par
+    \tab FOREIGN KEY(role_Id) REFERENCES roles(id),\par
+    \tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    \tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    \tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP \par
+\tab );\par
+
+\pard\sl240\slmult1\tx1080\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\sl240\slmult1\b id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\line\par
+{\pntext\f0 2.\tab}\b\fs24\lang9 user_Id - \b0 This is a column in the database that will store the \b user_Id\b0  from the users table. This column is a foreign key. Datatype is \b INT\b0 .\fs22\lang16393\line\par
+{\pntext\f0 3.\tab}\b\fs24\lang9 role_Id - \b0 This is a column in the database that will store the \b role_Id\b0  from the roles table. This column is a foreign key. Datatype is \b INT\b0 .\line\par
+{\pntext\f0 4.\tab}\b created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 5.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 6.\tab}\b deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\par
+
+\pard\sl240\slmult1\par
+\tab\tab\tab\tab\tab\cf1\b\fs28 MODULES TABLE\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\sl240\slmult1\cf0\b0\fs22 In this table we are storing the module name.\b\par
+{\pntext\f1\'B7\tab}\b0 Modules are those things or permission given to the user.\b\par
+{\pntext\f1\'B7\tab}\b0 This option is there only for the higher person.\b\par
+
+\pard\sl240\slmult1\b0\par
+\b\fs24 Table creation query -\line\par
+\b0 CREATE TABLE modules\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    name VARCHAR(50),\par
+    activity VARCHAR(50),\par
+    status ENUM('active', 'inactive') DEFAULT 'active',\par
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\b id\fs28  - \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\lang16393\par
+{\pntext\f0 2.\tab}\b\fs24\lang9 name \b0 - The name of the modules are stored here in this column. \fs22\lang16393 We have used \b\fs24 VARCHAR(50)\fs22 .\b0\par
+{\pntext\f0 3.\tab}\b\fs24\lang9 status\b0  - \b  \b0 This is the column in the database which will store the status of the particular module. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\fs22\lang16393\par
+{\pntext\f0 4.\tab}\b\fs24\lang9 created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\par
+{\pntext\f0 5.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\par
+{\pntext\f0 6.\tab}\b deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\par
+
+\pard\sl240\slmult1\tx1080\lang16393  \fs22\par
+\tab\tab\tab\tab  \cf1\b\fs28\lang9 CATEGORY TABLE\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\tx1080\cf0\b0\fs22 Every product belongs to a certain category. \b\par
+{\pntext\f1\'B7\tab}\b0 Category is a grouping or classification of similar or related items. Categories are used to organize information in a systematic and structured way, making it easier to find and understand.\b\par
+{\pntext\f1\'B7\tab}\b0 If the product will be arranged in the category then it will be very easy to find and classify and performing operation.\b\par
+{\pntext\f1\'B7\tab}\b0 The taxes are also applied on category. There will exemptions for some products.\b\par
+{\pntext\f1\'B7\tab}\b0 For ex 18 % GST for electronic's product. Here is electronic's is a category. More specifications are there in it.\b\par
+
+\pard\sl240\slmult1\tx1080\par
+\fs24 Table creation query -\par
+\par
+\b0 CREATE TABLE categories\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    name VARCHAR(50) NOT NULL,\par
+    description VARCHAR(150) NOT NULL,\par
+    status ENUM('active', 'inactive') DEFAULT 'active',\par
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\par
+\b\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\b\line\par
+
+\pard 
+{\pntext\f0 2.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1 name - \b0 The name of the categories are stored here in this column. \fs22\lang16393 We have used \b\fs24 VARCHAR(50)\fs22  \b0  in the category name we can have number and characters\b .\fs24\lang9\line\par
+{\pntext\f0 3.\tab}description - \b0 Here we are writting some information about the category. Details of the category. What kind of product will be there in the category. We have used \b VARCHAR(150) \b0 datatype.\b\fs22\line\par
+{\pntext\f0 4.\tab}\fs24 status\b0  - \b  \b0 This is the column in the database which will store the status of the particular category. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\fs22\lang16393\line\par
+{\pntext\f0 5.\tab}\b\fs24\lang9 created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 6.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 7.\tab}\b deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\b\fs22\line\par
+
+\pard\sl240\slmult1\tx1080\b0\lang16393\tab\tab\tab\tab  \cf1\b\fs28\lang9 UNITS TABLE\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\tx1080\cf0\b0\fs22 Every product have a certain unit. \b\par
+{\pntext\f1\'B7\tab}\b0 Unit is a standardized measure or quantity that is used to express or quantify a physical, conceptual, or mathematical property or value.\b\par
+{\pntext\f1\'B7\tab}\b0 Some product will be have same unit. While some can have different units. While product price also depends on unit\b\par
+{\pntext\f1\'B7\tab}\b0 So it is important to keep the unit\b\par
+
+\pard\sl240\slmult1\tx1080\b0\par
+\b\fs24 Table creation query -\fs22\par
+\b0\tab\line\tab CREATE TABLE units\par
+\tab (\par
+    \tab\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+\tab  \tab name VARCHAR(25) NOT NULL,\par
+    \tab\tab description VARCHAR(150) NOT NULL,\par
+    \tab\tab status ENUM('active', 'inactive') DEFAULT 'active',\par
+    \tab\tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    \tab\tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    \tab\tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+\tab );\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\b\fs24 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\b\line\par
+
+\pard 
+{\pntext\f0 2.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1 name - \b0 The name of the unit are stored here in this column. \fs22\lang16393 We have used \b\fs24 VARCHAR(50)\fs22  \b0  in the unit name we can have number and characters\b .\fs24\lang9\line\par
+{\pntext\f0 3.\tab}description - \b0 Here we are writting some information about the unit. Details of the unit. We have used \b VARCHAR(150) \b0 datatype.\b\fs22\line\par
+{\pntext\f0 4.\tab}\fs24 status\b0  - \b  \b0 This is the column in the database which will store the status of the particular unit. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\fs22\lang16393\line\par
+{\pntext\f0 5.\tab}\b\fs24\lang9 created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 6.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 7.\tab}\b deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\b\fs22\par
+
+\pard\sl240\slmult1\b0\fs24\par
+
+\pard\sl240\slmult1\tx1080\tab\fs22\lang16393\tab  \tab\tab\cf1\b\fs28\lang9 ROLE_PERMISSIONS TABLE\line\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\tx1080\cf0\b0\fs22 Since the authority or permission given on the basis of role.\b\par
+{\pntext\f1\'B7\tab}\b0 We are creating this table. \b\par
+{\pntext\f1\'B7\tab}\b0 Here we we will stroring the role_Id and module_Id\b\par
+{\pntext\f1\'B7\tab}\b0 For of them are in stored here as a foreign key.\b\par
+{\pntext\f1\'B7\tab}\b0 This is help us to keep a track of roles along with their perticular authority.\b\par
+
+\pard\sl240\slmult1\tx1080\b0\par
+\b\fs24 Table creation query -\line\fs22\par
+\b0\tab CREATE TABLE role_permissions \par
+\tab (\par
+    \tab\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    \tab\tab role_Id INT,\par
+\tab\tab FOREIGN KEY(role_Id) REFERENCES roles(id),\par
+    \tab\tab module_Id INT,\par
+    \tab\tab FOREIGN KEY (module_Id) REFERENCES modules(id)\par
+\tab );\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\b\fs24 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\b\line\par
+
+\pard 
+{\pntext\f0 2.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1 role_Id - \b0 This is a column in the database that will store the \b role_Id\b0  from the roles table. This column is a foreign key. Datatype is \b INT\b0 .\line\par
+{\pntext\f0 3.\tab}\b module_Id - \b0 This is a column in the database that will store the \b module_Id\b0  from the modules table. This column is a foreign key. Datatype is \b INT\b0 .\fs22\par
+
+\pard\sl240\slmult1\fs24\par
+\tab\tab\tab\tab\cf1\b\fs28 DISTRIBUTORES TABLE\line\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\cf0\b0\fs24 In this table, we will store distributor information.\par
+{\pntext\f1\'B7\tab}Distributors are people who supply products.\par
+{\pntext\f1\'B7\tab}Manufacturers give tenders or agencies to them, and they supply to shopkeepers or others.\par
+{\pntext\f1\'B7\tab}The company or manufacturer doesn't directly deal with the seller.\fs22\par
+
+\pard\sl240\slmult1\fs24\par
+\b Table creation query -\par
+\par
+
+\pard\fi-270\li270\ri-1800\sl240\slmult1\tx1620\tx1710\b0 CREATE TABLE distributors\par
+\tab (\par
+
+\pard\fi-270\li270\ri-1800\sl240\slmult1\tx1200\tx1710     \tab  \tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+ \tab\tab name VARCHAR(50) NOT NULL,\par
+\tab\tab contact_person_name VARCHAR(50) NOT NULL,\par
+\tab\tab contact_number INT NOT NULL UNIQUE,\par
+    \tab\tab address VARCHAR(50) NOT NULL,    \par
+    \tab\tab taxation_number VARCHAR(50),\par
+
+\pard\sl240\slmult1\tx1080\fs22\tab   \fs24 status ENUM('active', 'inactive') DEFAULT 'active',\par
+
+\pard\fi-270\li270\ri-1800\sl240\slmult1\tx1200\tx1710\tab\tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+\tab\tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    \tab\tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+
+\pard\fi-270\li270\ri-1800\sl240\slmult1\tx1620\tx1710     );\par
+\tab\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\ri-1800\sl240\slmult1\tx1620\tx1710\b id :- \b0 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\line\par
+{\pntext\f0 2.\tab}\b name :- \b0 This is a column in the database which will store the distributor name. Datatype is \b VARCHAR(50).\line\par
+{\pntext\f0 3.\tab}contact_person_name - \b0 This is the column in the database where we are storing the person name. Whom the seller will contact for order distribution. Datatype is \b VARCHAR(50).\line\par
+{\pntext\f0 4.\tab}contact_number - \b0 This is the column in the database where we are storing distributor's person contact number. Whom the seller can contact for order distribution. Datatype is \b INT.\line\par
+{\pntext\f0 5.\tab}taxation_number :- \b0 In this column we are storing the tax registration number of the distributor. Datatype is \b VARCHAR(50).\line\par
+{\pntext\f0 6.\tab}status\b0  - \b  \b0 This is the column in the database which will store the status of the particular distributor. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\b\line\par
+
+\pard 
+{\pntext\f0 7.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1 created_at\b0   DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\line\par
+{\pntext\f0 8.\tab}\b updated_at\b0   DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\pntext\f0 9.\tab}\b deleted_at  \b0 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\b\par
+
+\pard\sl240\slmult1\b0\par
+
+\pard\sl240\slmult1\tx1080\cf1\b\fs28\tab\tab\tab\tab DIST_MANUFACTURES TABLE\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\cf0\b0\fs22 Since the distributor is not bound with only one manufacturer or company,\par
+{\pntext\f0 2.\tab}So we have to create this table.\par
+{\pntext\f0 3.\tab}For keeping track of which distributor is supplying which company products.\par
+{\pntext\f0 4.\tab}Note - One distributor can supply products of more than one company or manufacturer.\par
+{\pntext\f0 5.\tab}The company or manufacturer does not directly supply the product to the seller.\line\par
+
+\pard\sl240\slmult1\tx1080\b\fs24 Table creation query -\line\fs22\par
+\b0\tab CREATE TABLE dist_manufactures \par
+\tab (\par
+    \tab\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    \tab\tab distributor_Id INT,\par
+\tab\tab FOREIGN KEY(distributor_Id) REFERENCES distributors(id),\par
+    \tab\tab manufacturers_Id INT,\par
+    \tab\tab FOREIGN KEY (manufacturers_Id) REFERENCES manufacturers(id)\par
+\tab );\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\tx1080\b\fs24 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\b\line\par
+
+\pard 
+{\pntext\f0 2.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1 distributor_Id - \b0 This is a column in the database that will store the \b\fs22 distributor_Id\b0\fs24  from the \b\fs22 distributors\b0\fs24  table. This column is a foreign key. Datatype is \b INT\b0 .\line\par
+{\pntext\f0 3.\tab}\b manufacturers_Id - \b0 This is a column in the database that will store the \b\fs22 manufacturers_Id\fs24  \b0 from the \b\fs22 manufacturers\b0\fs24  table. This column is a foreign key. Datatype is \b INT\b0 .\par
+
+\pard\sl240\slmult1\par
+\tab\tab\tab\tab\cf1\b\fs28 MEDTYPES TABLE\cf0\b0\fs24\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sl240\slmult1 Medicines have many type.\par
+{\pntext\f0 b.\tab}So we are storing all the type over here.\par
+{\pntext\f0 c.\tab}Importing this type in the medicine table\par
+{\pntext\f0 d.\tab}type ex :- Painkiller, generic, etc.\par
+
+\pard\sl240\slmult1\par
+\b Table creation query -\par
+\par
+
+\pard\li360\sl240\slmult1\b0 CREATE TABLE medtypes\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    name VARCHAR(50) NOT NULL,\par
+    status ENUM('active', 'inactive') DEFAULT 'active',\par
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-270\li270\sl240\slmult1\b id\fs28  - \b0\fs22 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs24\line\par
+{\pntext\f0 2.\tab}\b name - \b0\fs22 The name of the type are stored here in this column. \lang16393 We have used \b\fs24 VARCHAR(50)\fs22  \b0  in the type name we can have number and characters\b .\b0\fs24\lang9\line\par
+{\pntext\f0 3.\tab}\b status\b0  - \fs22 This is the column in the database which will store the status of the particular type. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\fs24\line\par
+{\pntext\f0 4.\tab}\b created_at\b0  \fs22 DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs24\line\par
+{\pntext\f0 5.\tab}\b updated_at\b0  \fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\fs24\line\par
+{\pntext\f0 6.\tab}\b deleted_at \b0\fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\fs24\line\par
+
+\pard\sl240\slmult1\tx1080\cf1\b\fs28\tab\tab\tab\tab MEDICINE TABLE\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-284\li568\sl240\slmult1\cf0\b0\fs24 This page is for entering the medicine information and adding it into the database.\par
+{\pntext\f0 2.\tab}The medicine can be of category. for ex heart, lungs, etc.\par
+
+\pard 
+{\pntext\f0 3.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-284\li568\sl240\slmult1\tx284 Only users (not customers) can enter the medicine into the database. \par
+
+\pard 
+{\pntext\f0 4.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-284\li568\sl240\slmult1 Users can see the list of all the medicines from the this page only. There is the option as well.\par
+{\pntext\f0 5.\tab}The details which will be required for adding the medicine are as follow\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi900\li720\sl240\slmult1 Bar Code / Qr Code\par
+{\pntext\f1\'B7\tab}Medicine Name (M)\par
+{\pntext\f1\'B7\tab}Strength / Power (M)\par
+{\pntext\f1\'B7\tab}Generic Name\par
+{\pntext\f1\'B7\tab}Box Size\par
+{\pntext\f1\'B7\tab}Unit (M)\par
+{\pntext\f1\'B7\tab}shelf name(M)\tab\tab\par
+{\pntext\f1\'B7\tab}Medicine Details (M)\par
+{\pntext\f1\'B7\tab}Category Name (M)\par
+{\pntext\f1\'B7\tab}Price Per piece (M)\par
+{\pntext\f1\'B7\tab}Medici   ne type (M)\par
+{\pntext\f1\'B7\tab}Image\par
+{\pntext\f1\'B7\tab}Manufacturer Name(M)\par
+{\pntext\f1\'B7\tab}Manfacturer Price (M)\par
+{\pntext\f1\'B7\tab}Taxation Name\par
+{\pntext\f1\'B7\tab}IGTA\par
+{\pntext\f1\'B7\tab}status  (M)\line\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-164\li164\sl240\slmult1 After filling all the this information the software will go on store the entered in the database.\par
+{\pntext\f0 b.\tab} This will happen when the user click on the "\b SUBMIT\b0 " button. If the user clicks on   "\b RESET\b0 " button then the filled information will get erased. \par
+{\pntext\f0 c.\tab}product image will be in the jpeg, jpg or png format.\par
+
+\pard\fi-270\li270\ri-1800\sl240\slmult1\tx1620\tx1710\fs22\tab\par
+\b\fs24 Table creation query -\line\line\b0 CREATE TABLE medicines\par
+\tab (\par
+
+\pard\fi-270\li270\ri-1800\sl240\slmult1\tx720\tx1620\tx1710     \tab\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+
+\pard\fi-270\li270\ri-1800\sl240\slmult1\tx720\tx1710   \tab\tab barcodeqrcode VARCHAR(50),\par
+\tab\tab name VARCHAR(150) NOT NULL,\par
+\tab\tab power INT NOT NULL,\par
+\tab\tab generic_name VARCHAR(150),\par
+\tab\tab box_size INT,\par
+\tab\tab unit_Id INT NOT NULL,\par
+\tab\tab FOREIGN KEY (unit_Id) REFERENCES units(id),\par
+\tab\tab shelf_name VARCHAR(20) NOT NULL,\par
+\tab\tab box_name VARCHAR(20) NOT NULL,\par
+    \tab\tab m_details VARCHAR(150) NOT NULL,\par
+\tab\tab category_Id INT NOT NULL,\par
+\tab\tab FOREIGN KEY(category_Id) REFERENCES categories(id),\par
+\tab\tab price_piece INT NOT NULL,\par
+    \tab\tab m_type INT,\par
+\tab\tab FOREIGN KEY(m_type) REFERENCES medtypes(id),\par
+\tab\tab image VARCHAR(150),\par
+\tab\tab distributor_Id INT,\par
+\tab\tab FOREIGN KEY(distributor_Id) REFERENCES distributors(id),\par
+\tab\tab manufacturer_Id INT,\par
+   \tab\tab FOREIGN KEY(manufacturer_Id) REFERENCES manufacturers(id),\par
+    \tab\tab manufacturers_price INT NOT NULL,\par
+    \tab\tab taxation_per INT,\par
+\tab\tab FOREIGN KEY(taxation_per) REFERENCES taxations(id),\par
+\tab\tab igta INT,\par
+\tab\tab status ENUM('ACTIVE', 'INACTIVE') DEFAULT 'ACTIVE',\par
+\tab\tab created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+\tab\tab updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+\tab\tab deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP    \par
+
+\pard\fi-270\li270\ri-1800\sl240\slmult1\tx1620\tx1710\tab );\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\ri-1800\sl240\slmult1\tx1620\tx1710\b id\fs28  : \b0\fs22 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\line\par
+{\pntext\f0 2.\tab}\b\fs24 barcodeqrcode : \b0\fs22 In this column we are storing the barcode number. Barcode number are fetched by the barcode reader. Since we know that it can contain number and character. That is why \b VARCHAR(50) \b0 datatype is used. It is \b not \b0 a \b madatory\b0  feild.\b\line\par
+{\pntext\f0 3.\tab}\fs24 name - \b0\fs22 The name of the medicines are stored here in this column. \lang16393 We have used \b VARCHAR(150) \b0 in the medicine name we can have number and characters\b . \b0\lang9 It is a \b madatory\b0  feild.\b\line\par
+{\pntext\f0 4.\tab}\fs24 power - \b0\fs22 Every medicine have certain power. We will store them in this column. Power is always in number that is why we have used \b INT \b0 datatype\b . \b0  It is a \b madatory\b0  feild.\b\line\par
+{\pntext\f0 5.\tab}\fs24 generic_name - \b0\fs22 Every medicine have a generic name. We will store them in this column. Name can contain number and character that is why we have used \b VARCHAR(150) \b0 datatype. It is \b not \b0 a \b madatory\b0  feild.\b\line\par
+{\pntext\f0 6.\tab}\fs24 box_size - \b0\fs22 Here we are storing the num of particular medicine will be there in one box. That is related to box size. It will be always number. That is why we have used \b INT\b0  datatype. It is a \b madatory\b0  feild.\b\line\par
+{\pntext\f0 7.\tab}\fs24 unit_Id - \b0\fs22 Datatype \b INT. \b0 This column is a \b foreign key\b0  taken from the \b units\b0  table. Every product have different units and all the units are already available in the unit table. We are taking unit name as a input. It is a \b madatory\b0  feild.\line\par
+{\pntext\f0 8.\tab}\b\fs24 shelf_name - \b0\fs22 Datatype \b\fs24 VARCHAR(20)\fs22 . \b0 All the shelfs are named. This is done for finding the place of the medicine. Since the shelf name can be a char or number. It depend on the shop owner. It is a \b madatory\b0  feild.\line\par
+{\pntext\f0 9.\tab}\b\fs24 box_name - \b0\fs22 Datatype \b VARCHAR(20). \b0 All the boxs are named. This is done for finding the exact place of the medicine. Since the box name can be a char or number. It depend on the shop owner. It is a \b madatory\b0  feild.\line\par
+{\pntext\f0 10.\tab}\b\fs24 m_details - \b0\fs22 Datatype \b VARCHAR(150). \b0 We are storing the medince details here. It is a \b madatory\b0  feild.\fs20\line\fs22\par
+{\pntext\f0 11.\tab}\b\fs24 image - \b0\fs22 This is a column in the database table that will store the filename of an image of medice that will be provide by the user. Since we are only storing the image name we need \b VARCHAR(150)\b0  datatype. Because the image name can contain both character and number. It is \b not \b0 a \b madatory\b0  feild.\lang16393\line\par
+{\pntext\f0 12.\tab}\b\fs24\lang9 manufacturer_Id - \b0\fs22 Datatype \b INT. \b0 This column is a \b foreign key\b0  taken from the \b manufacturers\b0  table. Every product have different manufacturers and all the manufacturer are already available in the \b manufacturers\b0  table. We are taking manufacturer name as a input. It is a \b madatory\b0  feild.\line\par
+{\pntext\f0 13.\tab}\b\fs24 manufacturer_price - \b0\fs22 Data type \b INT. \b0 Price will always be in numbers. In this column, we will store the overall purchase price of a particular product. It is a \b mandatory\b0  field.\line\par
+{\pntext\f0 14.\tab}\b\fs24 taxation_per - \b0\fs22 This table will store the taxation percentage. Since it will be always a number we have used \b INT\b0  data type. It is a \b mandatory\b0  field.\b\line\par
+{\pntext\f0 15.\tab}\fs24 igta - \b0 Data type \b INT.\b0\line\par
+{\pntext\f0 16.\tab}\b status\b0  - This is the column in the database which will store the status of the particular medicine. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 17.\tab}\b created_at\b0  \fs22 DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs24\line\par
+{\pntext\f0 18.\tab}\b updated_at\b0  \fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\fs16\line\par
+{\pntext\f0 19.\tab}\b\fs24 deleted_at\b0\fs22  DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\fs16\par
+
+\pard\ri-1800\sl240\slmult1\tx1620\tx1710\par
+\fs22\par
+
+\pard\sl240\slmult1\cf1\b\fs28\lang16393\tab\tab\tab\tab PAGE CUSTAMIZATION\fs24\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\cf0\b0\fs22\lang9 Page customization value is stored in the database\par
+{\pntext\f1\'B7\tab}The value is stored in this table.\par
+{\pntext\f1\'B7\tab}Font size and font value and their respective value will be stored.\par
+{\pntext\f1\'B7\tab}The user can change customize the  design as well \par
+
+\pard\sa200\sl240\slmult1\par
+\b\fs24\lang16393 Table creation query :-\cf1  \cf0\b0\fs22\lang9\par
+
+\pard\lang16393 CREATE TABLE page_customization\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    font_one VARCHAR(50),\par
+    font_two VARCHAR(50),\par
+    body_bg_color VARCHAR(50),\par
+    body_font_size VARCHAR(10),\par
+    line_hight VARCHAR(10),\par
+    text_color VARCHAR(50),\par
+    logo_text_color VARCHAR(50),\par
+    menu_bg_color VARCHAR(50),\par
+    menu_hover_color VARCHAR(50),\par
+    menu_font_color VARCHAR(50),\par
+    menu_font_size VARCHAR(10),\par
+    active_menu_color VARCHAR(50),\par
+    active_menu_bg_color VARCHAR(50),\par
+    status ENUM('active','inactive'),\par
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    updated_at DATETIME DEFAULT NULL ON UPDATE    CURRENT_TIMESTAMP,\par
+    deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\line\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\b\fs24\lang9 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\b\line\par
+{\pntext\f0 2.\tab}font_one: \b0 This font one will stoe the font style ,font_one is the main hedding  of the software .\fs22\lang16393 We have used \b\fs24 VARCHAR(50)\fs22  \b0  in the font_name we can have number and characters\b .\fs24\lang9\line\par
+{\pntext\f0 3.\tab}font_two : \b0 This font_two will stoe the font name, font_two is the sub hedding  of the software. \fs22\lang16393 We have used \b\fs24 VARCHAR(50)\fs22  \b0  in the font_name we can have number and characters\b .\b0\line\par
+
+\pard 
+{\pntext\f0 4.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\b\fs24 body_bg_color \fs22 : \b0 Here we are given the body background  color value this column We have used \b\fs24 VARCHAR(30)\fs22  \b0  in the body_bg_color we can have number and characters\b .\fs24\lang9\line\par
+{\pntext\f0 5.\tab}\lang16393 line_hight \fs22  : \b0 In this column will store the line hight .The user can controle the line  hight  line hight will come px, percentage etc.\fs24\lang9 We have used \b VARCHAR(10) \b0 datatype.\b\fs22\line\par
+{\pntext\f0 6.\tab}\fs24\lang16393 body_font_size\fs22  : \b0 In this column will stor the font size  may they px or percentage \fs24\lang9 We have used \b VARCHAR(10) \b0 datatype.\b\fs22\line\par
+{\pntext\f0 7.\tab}\fs24\lang16393 text_color\fs22  :\b0  In the column will store the text color value .\fs24\lang9 We have used \b VARCHAR(10) \b0 datatype.\b\fs22\line\par
+{\pntext\f0 8.\tab}\fs24\lang16393 logo_text_color\fs22  \b0 : In the column will store the logo text color column We have used \b\fs24 VARCHAR(50)\fs22  \b0  in the \b logo_text_color \b0 we can have number and characters\b .\fs24\lang9\line\par
+{\pntext\f0 9.\tab}\lang16393 menu_bg_color\fs22  \b0 : In the column will store the menu background color column We have used \b VARCHAR(50) \b0  in the \b\fs24 menu_bg_color \b0\fs22 we can have number and characters\b .\fs24\lang9\line\par
+{\pntext\f0 10.\tab}\lang16393 menu_hover_color\fs22  : \b0 In the column will store the menu hover color value We have used \b\fs24 VARCHAR(50)\fs22  \b0  in the \b\fs24 menu_hover_color\fs22  \b0 we can have number and characters\b .\fs24\lang9\line\par
+{\pntext\f0 11.\tab}\lang16393 menu_font_color\fs22   : \b0 In the column will store the menu font color  value. We have used \b\fs24 VARCHAR(50)\fs22  \b0 in the \b\fs24 menu_font_color\fs22  \b0 we can have number and characters\b .\fs24\lang9\line\par
+{\pntext\f0 12.\tab}\lang16393 menu_font_size\fs22  : \b0 In the column will store the menu font size value. We have used \b\fs24 VARCHAR(10\fs22 ) \b0  in the \b\fs24 menu_font_size\b0\fs22  we can have number and characters\b .\fs24\lang9\line\par
+
+\pard 
+{\pntext\f0 13.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\lang16393 active_menu_color\fs22\line\par
+{\pntext\f0 14.\tab}\fs24 active_menu_bg_color\fs22\line\par
+{\pntext\f0 15.\tab}\fs24 status\fs22  \b0\fs24\lang9 - \b  \b0\fs22 This is the column in the database which will store the status of the particular style. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\b\lang16393\line\par
+
+\pard 
+{\pntext\f0 16.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1\fs24\lang9 created_at\b0   \fs22 DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs24\line\par
+{\pntext\f0 17.\tab}\b updated_at\b0   \fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\fs24\line\par
+{\pntext\f0 18.\tab}\b deleted_at  \b0\fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\b\par
+
+\pard\sl240\slmult1\qc\par
+\cf1\fs28 BOXES TABLE\line\cf0\fs22\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\ri-1800\sl240\slmult1\tx1620\tx1710\b0\fs24 Every product will be kept in a certain box and that box name is stored over here.\fs16\par
+{\pntext\f1\'B7\tab}\fs24 Look every box have certain space can only have certain quantity of that particular product.\fs16\par
+{\pntext\f1\'B7\tab}\fs24 The name of the box will be different. Otherwise it will create problem to identify  the place.Where the medicine or product are kept.\fs16\par
+{\pntext\f1\'B7\tab}\fs24 We will also have the quantity of product. This can be used to give alert to the user when the product is low.\fs16\par
+
+\pard\ri-1800\sl240\slmult1\tx1620\tx1710\par
+\b\fs24\lang16393 Table creation query :-\cf1  \cf0\b0\fs16\lang9\par
+
+\pard\sl240\slmult1\b\fs22\par
+\tab\b0\fs24 CREATE TABLE boxes\par
+
+\pard\li720\sl240\slmult1 (\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    name VARCHAR(50) NOT NULL UNIQUE,\par
+    unit DECIMAL(4,2),\par
+    unit_qty INT NOT NULL,\par
+    status ENUM('ACTIVE', 'INACTIVE') DEFAULT 'ACTIVE',\par
+    created_at DATETIME,\par
+    updated_at DATETIME DEFAULT NULL,\par
+    deleted_at DATETIME DEFAULT NULL\par
+);\par
+\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li360\sl240\slmult1\b id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\line\par
+{\pntext\f0 b.\tab}\b name - \b0 The name of the box are stored here in this column. \lang16393 We have used \b VARCHAR(50) \b0 in the box name we can have number and characters\b . \b0\lang9 It is a \b madatory\b0  feild.\line\par
+{\pntext\f0 c.\tab}\b unit -\b0\line\par
+{\pntext\f0 d.\tab}\b unit_qty - \b0 In this feild we will store the quantity of number of products that can be under one box. \line\par
+{\pntext\f0 e.\tab}\b\lang16393 status\fs22  \b0\fs24\lang9 - This is the column in the database which will store the status of the particular box. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\pntext\f0 f.\tab}\b created_at\b0   \b DATETIME\b0  - This column is defined with the DATETIME data type, which will be automatically set by the database engine when a new row is inserted into the table.\fs28\line\par
+{\pntext\f0 g.\tab}\b\fs24 updated_at\b0   \b DATETIME DEFAULT NULL \b0 - This column is also defined with the DATETIME data type and has a default value of NULL.\b\line\par
+{\pntext\f0 h.\tab}deleted_at  DATETIME DEFAULT NULL\b0  - This column is similar to the updated_at column, but it will be used to indicate. By setting the default value to NULL, the column will be empty for all active rows.\b\line\par
+
+\pard\sl240\slmult1\qc\cf1\fs28 STOCKS TABLE\line\cf0\fs22\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\ri-1800\sl240\slmult1\tx1620\tx1710\b0\fs24 In this table we will store the stock of the medicine. Total total stock of the medicine is being store in the table.\fs16\par
+{\pntext\f1\'B7\tab}\fs24 we will also have last purchased date in this table\fs16 .\par
+
+\pard\ri-1800\sl240\slmult1\tx1620\tx1710\par
+\par
+\b\fs24\lang16393 Table creation query :-\cf1  \par
+\cf0\b0\fs22\lang9\par
+
+\pard\li426\ri-1800\sl240\slmult1\tx142\tx1620\tx1710 CREATE TABLE stocks\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    medicine_Id INT,\par
+    FOREIGN KEY (medicine_Id) REFERENCES medicines(id),\par
+    available_stock INT NOT NULL,\par
+    last_purchase DATETIME,\par
+    status ENUM('ACTIVE', 'INACTIVE') DEFAULT 'ACTIVE',\par
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\par
+\par
+
+\pard 
+{\listtext\f0 1.\tab}\ls1\ilvl8\fi-270\li270\ri-1800\sl240\slmult1\tx180\tx270\tx1530\tx1620\tx1710\b\fs24 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\b\line\par
+
+\pard 
+{\listtext\f0 1.\tab}\ls1\fi-270\li270\ri-1800\sl240\slmult1\tx180\tx1530\tx1620\tx1710 medicine_Id\fs28  : \b0\fs24 In this table we will store the medicine id. Which is taken from the medicines table. The datatype is \b INT\b0 .\b\line\b0  \b\par
+
+\pard 
+{\listtext\f0 2.\tab}\ls1\fi-180\li180\ri-1800\sl240\slmult1\tx180\tx1530\tx1620\tx1710 available_stock : \b0 Here we will storing the current available stock of particular  medicine Id. Which is there in the medicines_id column. The datatype is \b INT\b0 .\b\line\par
+{\listtext\f0 3.\tab}last_purchase : \b0 This table we will be storing the latest date of particular item purchase. So that the owner or admin can have the product latest purchase and whether it is selling quickly or not. The datatype is \b DATETIME\b0 .\b\line\par
+{\listtext\f0 4.\tab}\lang16393 status\fs22  \b0\fs24\lang9 - This is the column in the database which will store the status of the particular stock. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\line\par
+{\listtext\f0 5.\tab}\b created_at\b0   \fs22 DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs24\line\par
+{\listtext\f0 6.\tab}\b updated_at\b0   \fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+{\listtext\f0 7.\tab}\b\fs24 deleted_at  \b0\fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\par
+
+\pard\sl240\slmult1\qc\b\fs24\line\cf1\fs28 new_purchases\cf0\b0\fs18  \cf1\b\fs28 TABLE\line\cf0\fs22\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\ri-1800\sl240\slmult1\tx1620\tx1710\b0\fs24 In this table we will store the new purchase order of all the purchase made by the medicine shop.\fs16\par
+{\pntext\f1\'B7\tab}\fs24 We will store the image furture reference.\fs16\par
+{\pntext\f1\'B7\tab}\fs24 If the owner will pay the amount after certain days that are provided by the vendor then we will store that date and take a reference for letting user notify when the time will come for payment.\fs16\par
+
+\pard\ri-1800\sl240\slmult1\tx1620\tx1710\par
+\b\fs24\lang16393 Table creation query :-\cf1  \par
+\par
+\cf0\b0 CREATE TABLE new_purchases\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    bill_no VARCHAR(25) NOT NULL,\par
+    distributor_Id INT,\par
+    FOREIGN KEY(distributor_Id) REFERENCES distributors(id),\par
+    manufacturers_Id INT,\par
+    FOREIGN KEY (manufacturers_Id) REFERENCES manufacturers(id),\par
+    image VARCHAR(100),\par
+    purchased_date DATETIME,\par
+    amount DECIMAL(11,2) NOT NULL,\par
+    paidORunpaid ENUM('YES', 'NO'),\par
+    payment_type ENUM('Cash', 'Cheque', 'Bank Transfer', 'Pending'),\par
+    payment_date DATETIME,   \par
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\par
+    updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,\par
+    deleted_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP\par
+);\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-180\li180\ri-1800\sl240\slmult1\tx1620\tx1710\b\lang9 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\fs22\line\par
+{\pntext\f0 2.\tab}\b\fs24 bill_no\fs28  : \b0\fs24 This is a column in the database table in which we will store the bill number. The data type is \b VARCHAR\b0 , Because bill number can contain the number or characters.\fs22\line\par
+{\pntext\f0 3.\tab}\b\fs24\lang16393 distributor_Id :\lang9 - \b0 This is a column in the database that will store the \b distributor_Id\b0  from the \b distributors\b0  table. This column is a foreign key. Datatype is \b INT\b0 .\fs22\line\par
+{\pntext\f0 4.\tab}\b\fs24 manufacturers_Id - \b0 This is a column in the database that will store the \b manufacturers_Id \b0 from the \b manufacturers\b0  table. This column is a foreign key. Datatype is \b INT\b0 .\fs22\line\par
+{\pntext\f0 5.\tab}\b\fs24\lang16393 image - \b0 In this column we will store the file name of the image. While add or filling the the details. The admin can submit the image of bill for their future reference. So for that we will store the name of the file. \lang9 Datatype is \b VARCHAR\b0 .\b\fs22\line\par
+{\pntext\f0 6.\tab}\fs24\lang16393 purchased_date - \b0 In this column we will store the date of the purchase. \lang9 Datatype is \b DATETIME\b0 .\b\fs22\line\par
+{\pntext\f0 7.\tab}\fs24 amount - \b0 Here we will store the bill amount. Total bill amoun. Which have to be paid by the owner. Datatype is \b DECIMAL\b0 .\b\fs22\line\par
+{\pntext\f0 8.\tab}\fs24\lang16393 paidORunpaid - \b0\lang9 This is the column in the database which will store the payment status of the particular bill. It can be either \b YES\b0  or \b NO\b0 . We have used enum datatype because the value will be only one of the specified two.\b\fs22\line\par
+
+\pard 
+{\pntext\f0 9.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-270\li270\ri-1800\sl240\slmult1\tx1620\tx1710\fs24\lang16393 payment_type - \b0\lang9 This is the column in the database which will store the payment type of the particular bill. It can be either \b CASH, CHEQUE, PENDING\b0  or \b BANK TRANSFER\b0 . We have used enum datatype because the value will be only one of the specified 4.\b\fs22\line\par
+
+\pard 
+{\pntext\f0 10.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li360\ri-1800\sl240\slmult1\tx270\tx1620\tx1710\fs24\lang16393 payment_date :- \b0 In this column we will store the date of the payment made. \lang9 Datatype is \b DATETIME\b0 .\b\fs22\line\par
+
+\pard 
+{\pntext\f0 11.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li360\ri-1800\sl240\slmult1\tx360\tx1530\tx1620\tx1710\fs24 created_at\b0   \fs22 DATETIME DEFAULT CURRENT_TIMESTAMP - This column is defined with the DATETIME data type and has a default value of the current timestamp, which will be automatically set by the database engine when a new row is inserted into the table.\fs24\line\par
+
+\pard 
+{\pntext\f0 12.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li360\ri-1800\sl240\slmult1\tx180\tx360\tx1530\tx1620\tx1710\b updated_at\b0   \fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is also defined with the DATETIME data type and has a default value of NULL. However, if the row is updated, the database engine will automatically set the value of this column to the current timestamp.\line\par
+
+\pard 
+{\pntext\f0 13.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li360\ri-1800\sl240\slmult1\tx360\tx1530\tx1620\tx1710\b\fs24 deleted_at  \b0\fs22 DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP - This column is similar to the updated_at column, but it will be used to indicate when a row has been soft-deleted from the table. By setting the default value to NULL, the column will be empty for all active rows. If a row is deleted, the database engine will set the value of this column to the current timestamp, indicating the time of deletion.\b\par
+
+\pard\ri-1800\sl240\slmult1\tx360\tx1530\tx1620\tx1710\par
+\cf1\fs28\tab\tab\tab\tab\tab\tab Invoice\cf0\b0\fs18  \cf1\b\fs28 TABLE\par
+\par
+\cf0\b0\fs22 1. In this table we will store the all the bill details.\par
+2. Number of product and their particular quantity all these will be stored ober here in this table. \par
+\par
+
+\pard\ri-1800\sl240\slmult1\tx1620\tx1710\fs16\par
+\b\fs24\lang16393 Table creation query :-\cf1  \par
+
+\pard\ri-1800\sl240\slmult1\tx360\tx1530\tx1620\tx1710\cf0\fs22\lang9\par
+\b0 CREATE TABLE invoices\par
+(\par
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\par
+    bill_no VARCHAR(50) NOT NULL,\par
+
+\pard\fi-180\li180\ri-1800\sl240\slmult1\tx900\tx1530\tx1620\tx1710     medicines_Id INT,\par
+
+\pard\ri-1800\sl240\slmult1\tx360\tx1530\tx1620\tx1710     FOREIGN KEY(medicines_Id) REFERENCES medicines(id),\par
+    amount_per_peice DECIMAL(6,2) NOT NULL,\par
+    qty INT NOT NULL,\par
+    tax_amount DECIMAL(6,2) NOT NULL,\par
+    overall_amount DECIMAL(6,2) NOT NULL,\par
+    b_date DATETIME\par
+);\par
+\b\par
+\b0 1. \b\fs24 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\par
+\par
+2. \b bill_no :- \b0 In this coloumn we will store the bill number. See this column is not \b UNIQUE. \b0 Because one bill will contain more than one product so the bill number will be repeated more than one time. Through this bill number we can find total product and their particular quantity in one invoice.\par
+\par
+3. \b medicines_Id\b0\fs22  - \fs24 This is a column in the database that will store the \b medicines_Id\b0  from the \b medicines\b0  table. This column is a foreign key. Which is reference from the \b medicines \b0 table.\par
+\par
+4. \b amount_per_peice - \b0 In this column we will store the amount of a single particular medicine. Datatype is \b DECIMAL\b0 .\par
+\par
+5. \b qty\b0\fs22  - In this column we will store the overall quantity of a particular medicine purchased by the customer. \fs24 Datatype is \b INT\b0 .\par
+\par
+6. \b tax_amount - \b0\fs22 In this column we will store the overall tax amount of a particular medicine. \fs24 Datatype is \b DECIMAL\b0 .\par
+\par
+7. \b overall_amount - \b0\fs22 In this column we will store the overall amount of a particular medicine after multiplying it with the quantity. \fs24 Datatype is \b DECIMAL\b0 .\par
+\par
+8. \b b_date - \b0 In this column we will store the bill date. When that medicine is purchased. Datatype is \b DATETIME\b0 .\par
+\par
+\tab\tab\tab\tab\tab\tab  \tab\cf1\b\fs28 Sales\cf0\b0\fs18  \cf1\b\fs28 TABLE\par
+\cf0\b0\fs24\line 1. In this column we will store all the sales report. \par
+2. Here we will store the customer who have purchased it.\par
+3. user who have sellled it \par
+4. amount, fully paid, payment type all these things are kept in this table.\fs22\line\b\par
+\fs24\lang16393 Table creation query :-\cf1  \par
+\cf0\fs22\lang9\par
+\b0 CREATE TABLE sales\par
+(\par
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\par
+    bill_no VARCHAR(50) NOT NULL,\par
+    cust_Id INT,\par
+    FOREIGN KEY(cust_Id) REFERENCES customers(id),\par
+    user_Id INT,\par
+    FOREIGN KEY(user_Id) REFERENCES users(id),\par
+    total_discount DECIMAL(6,2),\par
+    tax_amount DECIMAL(6,2),\par
+    bill_amount DECIMAL(6,2) NOT NULL,\par
+\fs24\lang16393    paidORunpaid ENUM('YES', 'NO'),\par
+   fullyOrpartially ENUM('Fully Paid', 'Partially Paid'),\fs22\lang9\par
+    payment_type ENUM ('Cash', 'Card', 'Bank Transfer'),\par
+    created_at DATETIME,\par
+    updated_at DATETIME DEFAULT NULL,\par
+    deleted_at DATETIME DEFAULT NULL\par
+);\par
+\par
+1. \b\fs24 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\par
+\par
+2. \b bill_no - \b0 Since one bill can have number of medicines. So we are storing the bill number over here. So that we can have all the products that are there in that bill.\par
+\par
+3. \b cust_Id\fs22  - \b0\fs24 This is a column in the database that will store the \b customer_Id\b0  from the \b customers\b0  table. This column is a foreign key. Which is reference from the \b Customers \b0 table. Datatype is \b INT\b0 .\par
+\par
+4. \b user_Id - \b0 This is a column in the database that will store the \b user_Id\b0  from the \b users\b0  table. This column is a foreign key. Which is reference from the \b Users \b0 table. Datatype is \b INT\b0 .\par
+\par
+5. \b total_discount - \b0 In this column we will store the total amount of discount given in that particular bill. Datatype is \b DECIMAL\b0 .\par
+\par
+6. \b tax_amount - \b0 In this column we will store the total amount of tax that was ther in that particular bill. Datatype is \b DECIMAL\b0 .\line\par
+7. \b bill_amount - \b0 In this column we will store the final amount of bill that need to be paid by the customer. Datatype is \b DECIMAL\b0 .\par
+\par
+8. \b\lang16393 paidORunpaid - \b0\lang9 This is the column in the database which will store the payment status of the particular sales bill. It can be either \b YES\b0  or \b NO\b0 . We have used enum datatype because the value will be only one of the specified two.\line\line 9. \b\lang16393 fullyOrpartially\b0  \b - \b0\lang9 This is the column in the database which will store the payment status of the particular sales bill. Whether it is paid \b fully\b0  or \b partially\b0 . We have used enum datatype because the value will be only one of the specified two.\par
+\par
+10. \b\lang16393 payment_type - \b0\lang9 This is the column in the database which will store the payment type of the particular bill. It can be either \b CASH, CHEQUE\b0  or \b BANK TRANSFER\b0 . We have used enum datatype because the value will be only one of the specified 3.\par
+
+\pard\fi-360\li360\sl240\slmult1\par
+11. \b created_at\b0   \b DATETIME\b0  - This column is defined with the DATETIME data type, which will be automatically set by the database engine when a new row is inserted into the table.\par
+\fs28\par
+\fs24 12.\b  updated_at\b0   \b DATETIME DEFAULT NULL \b0 - This column is also defined with the DATETIME data type and has a default value of NULL.\b\par
+\par
+\b0 13. \b deleted_at  DATETIME DEFAULT NULL\b0  - This column is similar to the updated_at column, but it will be used to indicate. By setting the default value to NULL, the column will be empty for all active rows.\b\line\fs22\line\tab\tab\tab\tab\cf1\fs28 SALARIES TABLE\par
+\par
+\cf0\b0\fs24 1. In this table we will going to store the salaries of all the employees.\par
+2. This entry is done by the admin.\par
+\par
+\b\lang16393 Table creation query :-\line\cf1  \par
+\cf0\b0 CREATE TABLE salaries\par
+(\par
+\tab id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+\tab user_Id INT,\par
+    \tab FOREIGN KEY(user_Id) REFERENCES users(id),\par
+    \tab role_Id INT,\par
+    \tab FOREIGN KEY(role_Id) REFERENCES roles(id),\par
+    \tab salary INT NOT NULL,\par
+    \tab status ENUM ('active', 'inactive') DEFAULT 'active',\par
+    \tab created_at DATETIME,\par
+    \tab updated_at DATETIME DEFAULT NULL,\par
+    \tab deleted_at DATETIME DEFAULT NULL\par
+);\par
+\par
+\fs22\lang9 1.    \b\fs24 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\line\lang16393\par
+\lang9 2.   \b user_Id - \b0 This is a column in the database that will store the \b user_Id\b0  from the \b users\b0  table. This column is a foreign key. Which is reference from the \b Users \b0 table. Datatype is \b INT\b0 .\line\par
+3.   \b role_Id - \b0 This is a column in the database that will store the \b role_Id\b0  from the roles table. This column is a foreign key. Datatype is \b INT\b0 .\line\par
+4.   \b salary - \b0 This is a column in the database that will store the \b salary\b0  of all the employee. The entry will be done by the admin. Datatype is \b INT.\line\par
+\b0 5.   \b\lang16393 status\fs22  \b0\fs24\lang9 - This is the column in the database which will store the status of the particular user and their status. It can be either \b ACTIVE\b0  or \b INACTIVE\b0 . We have used enum datatype because the value will be only one of the specified two.\b  \line\par
+\b0 6.   \b created_at\b0   \b DATETIME\b0  - This column is defined with the DATETIME data type, which will be automatically set by the database engine when a new row is inserted into the table.\par
+\fs28\par
+\fs24 7.   \b updated_at\b0   \b DATETIME DEFAULT NULL \b0 - This column is also defined with the DATETIME data type and has a default value of NULL.\b\par
+\par
+\b0 8.   \b deleted_at  DATETIME DEFAULT NULL\b0  - This column is similar to the updated_at column, but it will be used to indicate. By setting the default value to NULL, the column will be empty for all active rows.\par
+\par
+\cf1\b\fs28\tab\tab\tab\tab\tab expenses TABLE\par
+\par
+\cf0\b0\fs24 1. In this table we will going to store the expenses spend for keep the store.\par
+2. Expenses can be electricity bill, property tax, beverages for employess, etc.\par
+3. This entry is done by the users(Not include customer).\par
+\par
+\b\lang16393 Table creation query :-\par
+\par
+\b0 CREATE TABLE expenses\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    e_date DATETIME,\par
+    description VARCHAR(200) NOT NULL,\par
+    bill_image VARCHAR(50),\par
+    payment_slip VARCHAR(50),\par
+    created_at DATETIME,\par
+    updated_at DATETIME DEFAULT NULL,\par
+    deleted_at DATETIME DEFAULT NULL\par
+);\par
+\par
+1.    \b\lang9 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\par
+\par
+
+\pard\ri-1800\sl240\slmult1\tx360\tx1530\tx1620\tx1710 2.   \b e_date - \b0 In this column we will store the date. When that expenses is done.  \tab Datatype is \b DATETIME\b0 .\par
+\par
+3.   \b\lang16393 description - \b0 In this column we will store the description of the expenses.\par
+\tab (ex- team lunch, tea, etc\lang9 ). Datatype is \b VARCHAR.\par
+\par
+\b0 4.   \b\lang16393 bill_image - \b0 In this column we will store the file name of the bill_image. While \tab adding or filling the the details. The admin or user can submit the image of bill for \tab their future reference. So for that we will store the name of the file. \lang9 Datatype is \tab\b VARCHAR\b0 .\par
+\line 5.   \b\lang16393 payment_slip - \b0 In this column we will store the file name of the payment_slip. If the \tab payment made be the employee first from their own pocket. While adding or filling \tab the details. The admin or user can submit the image of payment slip for their \tab future reference. So for that we will store the name of the file. \lang9 Datatype is \tab\b VARCHAR\b0 .\par
+\par
+
+\pard\fi-360\li360\sl240\slmult1 6.\tab\b created_at\b0   \b DATETIME\b0  - This column is defined with the DATETIME data type, which will be automatically set by the database engine when a new row is inserted into the table.\par
+\fs28\par
+\fs24 7.   \b updated_at\b0   \b DATETIME DEFAULT NULL \b0 - This column is also defined with the DATETIME data type and has a default value of NULL.\b\par
+\par
+\b0 8.   \b deleted_at  DATETIME DEFAULT NULL\b0  - This column is similar to the updated_at column, but it will be used to indicate. By setting the default value to NULL, the column will be empty for all active rows.\par
+\cf1\b\fs28\tab\tab\tab\tab\tab\par
+\par
+\tab\tab\tab\tab\tab Shelfs TABLE\cf0\b0\fs24\par
+      \par
+\lang16393 CREATE TABLE shelfs\par
+(\par
+
+\pard\li720\sl240\slmult1\lang9 id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+name VARCHAR(50) NOT NULL UNIQUE,\par
+status \lang16393  ENUM ('active', 'inactive') DEFAULT 'active',\lang9\par
+
+\pard\fi-360\li360\sl240\slmult1\lang16393     \tab\tab created_at DATETIME,\par
+    \tab\tab updated_at DATETIME DEFAULT NULL,\par
+  \tab       deleted_at DATETIME DEFAULT NULL\par
+);\par
+\line\par
+\cf1\b\fs28\lang9\tab\tab\tab\tab\tab loggs TABLE\cf0\b0\fs24\lang16393\par
+\lang9\par
+** In this table we will store the login and logout time of the users.\par
+\par
+\b\lang16393 Table creation query :-\b0\lang9\par
+\tab\tab\par
+CREATE TABLE loggs\par
+(\par
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\par
+    user_Id INT,\par
+    FOREIGN KEY(user_Id) REFERENCES users(id),\par
+    login_time DATETIME,\par
+    logout_time DATETIME\par
+);\par
+\par
+\lang16393 1.    \b\lang9 id\fs28  : \b0\fs24 This is a column in the database table that is the primary key for the table. The data type is \b INT\b0 , and it is set to auto-increment so that a new unique value is generated for each row.\par
+\par
+2.   \b user_Id - \b0 This is a column in the database that will store the \b user_Id\b0  from the \b users\b0  table. This column is a foreign key. Which is reference from the \b Users \b0 table. Datatype is \b INT\b0 .\par
+\par
+3.   \b login_time - \b0 In this column we will store the date and time of the user. When they are will login. Datatype is \b DATETIME\b0 .\par
+\par
+4.   \b logout_time - \b0 In this column we will store the date and time of the user. When they are will logout. Datatype is \b DATETIME\b0 .\par
+\par
+\par
+\par
+\par
+\fs22\par
+}
+ 

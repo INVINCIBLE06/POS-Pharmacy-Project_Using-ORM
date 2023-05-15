@@ -1,0 +1,525 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang16393\deflangfe16393{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red255\green0\blue0;\red0\green0\blue255;\red155\green0\blue211;}
+{\*\generator Riched20 6.3.9600}{\info{\horzdoc}{\*\lchars ([\'7b{\uc1 \u183 ?}{\uc1 \u8216 ?}{\uc1 \u8220 ?}{\uc1 \u12296 ?}{\uc1 \u12298 ?}{\uc1 \u12300 ?}{\uc1 \u12302 ?}{\uc1 \u12304 ?}{\uc1 \u12308 ?}{\uc1 \u12310 ?}{\uc1 \u65288 ?}{\uc1 \u65294 ?}{\uc1 \u65339 ?}{\uc1 \u65371 ?}{\uc1 \u65505 ?}{\uc1 \u65509 ?}}{\*\fchars !),.:;?]\'7d{\uc1 \u168 ?}{\uc1 \u183 ?}{\uc1 \u711 ?}{\uc1 \u713 ?}{\uc1 \u8213 ?}{\uc1 \u8214 ?}{\uc1 \u8217 ?}{\uc1 \u8221 ?}{\uc1 \u8230 ?}{\uc1 \u8758 ?}{\uc1 \u12289 ?}{\uc1 \u12290 ?}{\uc1 \u12291 ?}{\uc1 \u12293 ?}{\uc1 \u12297 ?}{\uc1 \u12299 ?}{\uc1 \u12301 ?}{\uc1 \u12303 ?}{\uc1 \u12305 ?}{\uc1 \u12309 ?}{\uc1 \u12311 ?}{\uc1 \u65281 ?}{\uc1 \u65282 ?}{\uc1 \u65287 ?}{\uc1 \u65289 ?}{\uc1 \u65292 ?}{\uc1 \u65294 ?}{\uc1 \u65306 ?}{\uc1 \u65307 ?}{\uc1 \u65311 ?}{\uc1 \u65341 ?}{\uc1 \u65344 ?}{\uc1 \u65372 ?}{\uc1 \u65373 ?}{\uc1 \u65374 ?}{\uc1 \u65504 ?}}}
+\viewkind4\uc1 
+\pard\widctlpar\qc\kerning2\ul\f0\fs36\lang9 Squad\ulnone  \ul Pharma\ulnone  \ul Input\ulnone  \ul Output\ulnone  \ul Design\par
+
+\pard\widctlpar\ulnone\fs22\lang16393\par
+\cf1\b\fs24 A. Starting Page \cf0\b0\fs22\par
+\par
+1. This is the starting page.\par
+\par
+2. There will be no input for the starting page\par
+\par
+3. Some of the information will be by default added by the developer team. Which is given by the admin team. That can be changed or customized by the admin team later.\par
+\par
+4. The default data will be inside the \b SQL VIEW \b0 table.\par
+\par
+5. Some of the password policies are already their in the table\par
+\par
+6. Below is the route for the first page.\par
+\b\par
+//// route or URL \b0 ---> {{\field{\*\fldinst{HYPERLINK http://localhost:8080/start/page }}{\fldrslt{http://localhost:8080/start/page\ul0\cf0}}}}\f0\fs22\par
+\par
+\b Response Syntax :-\b0\par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": \kerning0 PHARMA_SUCCESS_MESSAGE\kerning2 ,\par
+    "data": \par
+    [\{\par
+        "panel_settings" :    \par
+        \{\par
+            "language" : "",\par
+            "company_title" : "",\par
+            "favicon" : "",\par
+            "logo" : "",\par
+            "font" : "",\par
+            "font_one" : "",\par
+            "font_two": "",\par
+            "body_bg_color": "",\par
+            "body_font_size": "",\par
+            "line_hight": "",\par
+            "text_color": "",\par
+            "footer_text" : "",         \par
+        \},    \par
+        "password_policies" :\par
+        [\{\par
+            "id" : "",\par
+            "name" : "",\par
+            "value" : ""\par
+        \}]\par
+    \}]\par
+\}\par
+\par
+\cf1\b\fs24 Password_Policies (This policies are changeable)\line\tab\par
+
+\pard 
+{\pntext\f0 i.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcrm{\pntxta.}}
+\fi-360\li720\cf0\b0 The max\cf1  \cf0 length of the password is 20.\b\fs22\par
+{\pntext\f0 ii.\tab}\b0\fs24 The min length of password is 8.\b\fs22\par
+{\pntext\f0 iii.\tab}\b0\fs24 Password must contain 1 upper case letter.\b\fs22\par
+{\pntext\f0 iv.\tab}\b0\fs24 Password must contain 1 lower case letter.\b\fs22\par
+{\pntext\f0 v.\tab}\b0\fs24 Password must contain 1 one symbol.\b\fs22\par
+{\pntext\f0 vi.\tab}\b0\fs24 Maxium wrong attempt are 3 for entering the password consicutevely.\b\fs22\par
+{\pntext\f0 vii.\tab}\b0\fs24 Blocked hours are 24 hours.\b\fs22\par
+
+\pard\widctlpar\b0\line\par
+\cf1\b\fs24 B. Login Page\cf0\fs22\par
+\par
+\b0 1\b . \b0 This is the first to out application. Which will be done the admin.\par
+2. Their details will be available in software \par
+3. Email and password is used for login.\b\par
+\b0\par
+//// route or URL ---> {{\field{\*\fldinst{HYPERLINK http://localhost:8080/auth/login }}{\fldrslt{http://localhost:8080/auth/login\ul0\cf0}}}}\f0\fs22\par
+\par
+
+\pard\cf3\kerning0 1.  // if email is not correct. Message will be in coming from constants.\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message": PHARMA_INVALID_EMAIL\par
+\}\par
+\par
+\cf3 2. // If password is not correct but the structure\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message": PHARMA_INCORRECT_PASSWORD\par
+\}\par
+\par
+\cf3 3. // If structure is not correct, then\cf0\par
+\par
+\b Response Syntax :- \par
+\b0\par
+\cf1 NOTE :- Password Structure is as per user. It will changed as time.\cf0\par
+\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : PHARMA_INVALID_PASSWORD_STRUCTURE\par
+\}\kerning2\par
+
+\pard\widctlpar\par
+
+\pard\cf3\kerning0 4. // If all things are correct, then\cf0\par
+
+\pard\widctlpar\kerning2\par
+\b Response Syntax :-\b0  \par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": \kerning0 PHARMA_SUCCESS_MESSAGE\kerning2 ,\par
+    "data": \par
+    [\{\par
+        "user" :    \par
+        \{\par
+            "id": "",\par
+            "first_name": "",\par
+            "last_name": "",\par
+            "email" : "",\par
+            "gender" : "",\par
+            "phone" : "",\par
+            "address" : "",\par
+            "id_proof_type" : "",\par
+            "id_proof_image": "",\par
+            "id_proof_no": "",\par
+            "profile_image": "",\par
+            "status": "",\par
+            "isadmin": "", \par
+           "modules" :    [\{   \par
+                    "id" :"",\par
+                    "name" : "" ,\par
+          \tab         "activity"  :\par
+
+\pard\widctlpar\li720\tab\tab [\{\par
+\tab\tab\tab "name" : ""\par
+\tab\tab\}]\par
+
+\pard\widctlpar\par
+           \tab          \tab      \}]\par
+        \},\par
+        "menu" : \par
+        \{\par
+            "\kerning0 menu_title\kerning2 " : "",\par
+            "menu_bg_color": "",\par
+            "menu_hover_color": "",\par
+            "menu_font_color": "",\par
+            "menu_font_size": "",\par
+            "active_menu_color": "",\par
+            "active_menu_bg_color": ""\par
+        \}\par
+    \}]\par
+\}\par
+\b\line\cf1\fs24 C.  Settings page \cf0\fs22\par
+\par
+\b0 1. In this paqge the admin will fill detail information of the their work place.\par
+2. Here all the favicon image, taxation details, licensce number and logo image every thing will be added.\par
+3. After adding the image and logo they will changed in the front end.\par
+\par
+\b //// route or URL\b0  ---> {{\field{\*\fldinst{HYPERLINK http://localhost:8080/add/settings }}{\fldrslt{http://localhost:8080/add/settings\ul0\cf0}}}}\f0\fs22\par
+\par
+\par
+\b Response Syntax :-\b0  \par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+    "data": \par
+    [\{\par
+        "settings" :    \par
+        \{\par
+             "address" : "",\par
+             "email" : "",\par
+\tab "\kerning0 phone \kerning2 " : "",\par
+\tab "\kerning0 licence_number\kerning2 " : "",\par
+\tab "\kerning0 gst_no \kerning2 " : "",\par
+\kerning0\tab "time_zone " : "",\kerning2\par
+            "languages" : [\par
+                \{"id" :"", "name": ""\}\par
+            ],\par
+            "currencys" : [\par
+                \{"id" :"", "name": ""\}\par
+            ],\par
+            "discounts" : [\par
+                \{"id" :"", "name": ""\}\par
+            ],\par
+           \}\par
+    \}]\par
+\}\par
+\par
+\b\line\cf1\fs24 D.  Add role page\cf0\fs22\par
+\b0\par
+1. Here we are adding the role name. For adding the new role in our system.\par
+2. Every module name different permissions. \par
+3. We will also select those module direclty from this page.\par
+\par
+\b // route or URL \b0 ---> {{\field{\*\fldinst{HYPERLINK http://localhost:8080/add/role }}{\fldrslt{http://localhost:8080/add/role\ul0\cf0}}}}\f0\fs22\par
+\par
+\b Response Syntax :-\b0  \par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+    "data": \par
+    \{\par
+        "modules" :    \par
+                [\{   \par
+                    "id" :"",\par
+                    "name" : "" ,          \tab\par
+\tab         "activity"  :\par
+
+\pard\widctlpar\li720\tab\tab [\{\par
+\tab\tab\tab "name" : ""\par
+\tab\tab\}]\par
+
+\pard\widctlpar\par
+           \tab            \}]\par
+\par
+                \}]\par
+    \}\par
+\}\par
+\par
+\cf1\b\fs24 D.  Edit role page\par
+\par
+\cf0\b0\fs22 1. Here we are editing the role name. For editing the  role  allredy in  the database.\par
+2. Every module name different permissions. \par
+3. We will also select those module direclty from this page.\par
+4. We can also add new module or remove exisiting module of a particular role\par
+\par
+\par
+\b //route or URL ---> {\b0{\field{\*\fldinst{HYPERLINK http://localhost:8080/edit/role }}{\fldrslt{http://localhost:8080/edit/role\ul0\cf0}}}}\b0\f0\fs22\par
+\par
+\b Response Syntax :-\b0  \par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+    "data": \par
+    \{\par
+        "role" :\par
+        \{   \par
+            "id" : "",\par
+            "name" : "",\par
+            "status" : ""\par
+        \},\par
+        "modules" :    \par
+        [\{   \par
+            "id" :"",\par
+            "name" : "" ,\par
+            "activity" :\par
+\tab\tab [\{\par
+\tab\tab\tab "name" : ""\par
+\tab\tab\}]\par
+        \}]\par
+    \}\par
+\}\par
+\par
+\cf1\b\fs24 E.  Role list page \par
+\par
+\par
+\cf0\b0\fs22 1. This page where all the available  role in out system will be displayed.\\\par
+2. Irrespective of their Status\par
+3. From this we can also edit the roles\par
+\par
+\b //route or URL \b0 ---> {{\field{\*\fldinst{HYPERLINK http://localhost:8080/role/list }}{\fldrslt{http://localhost:8080/role/list\ul0\cf0}}}}\f0\fs22\par
+\par
+\par
+\b Response Syntax :-\b0  \par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+    "data": \par
+    \{\par
+        "roles" :    \par
+                 [\{   \par
+                    "id" :"",\par
+                    "name" : ""   \par
+                \} ]\par
+\par
+    \}\par
+\}\par
+\par
+\par
+\cf1\b\fs24 F.  Role assign page\par
+\par
+\cf0\b0\fs22 1.\b\fs24  \b0\fs22 This page is for assigning role to a particular user.\par
+2. The data will be stored in different table called user_role.\par
+\par
+\par
+// route or URL ---> {{\field{\*\fldinst{HYPERLINK http://localhost:8080/user/assign/role }}{\fldrslt{http://localhost:8080/user/assign/role\ul0\cf0}}}}\f0\fs22\par
+\par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+    "data": \par
+    [\{\par
+        "users" :[\{"id" : "", "name" : ""\}],\par
+        "roles" :[\{"id" : "", "name" : ""\}]\par
+    \}]\par
+\}\par
+\par
+\cf1\b\fs24 G.  Add user\cf0\b0\fs22\par
+\par
+\b // route or URL ---> {\b0{\field{\*\fldinst{HYPERLINK http://localhost:8080/add/user }}{\fldrslt{http://localhost:8080/add/user\ul0\cf0}}}}\b0\f0\fs22\par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+    "data": \par
+    \{\par
+        "password_policies" :\par
+         [\{    \par
+              "id" : "",\par
+              "name" : "",\par
+              "value" : ""\par
+         \}]\par
+    \}\par
+\}\par
+\par
+
+\pard\cf3\kerning0 1.  // If password structure is not correct, then\cf0\par
+\par
+\b Response Syntax :- \par
+\b0\par
+\cf1 NOTE :- Password Structure is as per user. It will changed as time.\cf0\par
+\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : ""\par
+\}\par
+\par
+\cf3 2.  // If email structure is not correct, then\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : ""\par
+\}\kerning2\par
+\par
+\cf3\kerning0 3.  // If email is already available in the database. then\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" :  ""\par
+\}\kerning2\par
+\par
+\cf3\kerning0 4.  // If phone number is not  in correct format, then\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : ""\par
+\}\par
+\par
+\cf3 5.  // If phone number is already available our databasecorrect format, then\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : ""\par
+\}\kerning2\par
+\par
+
+\pard\widctlpar\par
+\cf3 5\cf0 .  \cf3 // If the add user is successfull\line\cf0\par
+\b Response Syntax :-\b0  \par
+  \par
+    \{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": ""\par
+     \} \tab\par
+\par
+\cf1\b\fs24 H.  Edit user\line\par
+\cf0\fs22 // route or URL ---> {\b0{\field{\*\fldinst{HYPERLINK http://localhost:8080/edit/user }}{\fldrslt{http://localhost:8080/edit/user\ul0\cf0}}}}\b0\f0\fs22\par
+\cf1\b\fs24\par
+\cf0\b0\fs22\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+    "data":   \{ \par
+        "user" : \{\par
+\tab "id": "",\par
+            "first_name": "",\par
+            "last_name": "",\par
+            "email" : "",\par
+            "gender" : "",\par
+            "phone" : "",\par
+            "address" : "",\par
+            "id_proof_type" : "",\par
+            "id_proof_image": "",\par
+            "id_proof_no": "",\par
+            "profile_image": "",\par
+            "status": "",\par
+            "isadmin": "", \par
+\tab\},\par
+        "password_policies" :\par
+        [ \{    \par
+              "id" : "",\par
+              "name" : "",\par
+              "value" : ""\par
+          \} ]\par
+\par
+    \}\par
+\}\par
+\par
+\cf1\b\fs24 I.  Add Customer \par
+\par
+\cf0\b0\fs22 1. Customer is also a user. But here customer we are taking on some other context.\par
+2. Only Phone number is mandatory customer. \par
+
+\pard 3. If email is not submit then also it will work.\line\line 1. \cf3\kerning0 // If phone number is already available our databasecorrect format, then\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : ""\par
+\}\kerning2\par
+
+\pard\widctlpar\par
+
+\pard 2. \cf3\kerning0  // If phone number is not  in correct format, then\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : ""\par
+\}\par
+
+\pard\widctlpar\kerning2\par
+
+\pard 3. \cf3\kerning0  // If phone number is not  provided, then\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : ""\par
+\}\par
+
+\pard\widctlpar\kerning2\par
+\par
+
+\pard 4. \cf3\kerning0  // If user is successfully registered , then\cf0\par
+
+\pard\widctlpar\kerning2\line\b // route or URL ---> {\b0{\field{\*\fldinst{HYPERLINK http://localhost:8080/add/customer }}{\fldrslt{http://localhost:8080/add/customer\ul0\cf0}}}}\b0\f0\fs22\par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+\}\par
+\par
+\cf1\b\fs24 J.  Customer List\par
+\par
+\cf0\fs22 $$ \b0 Customer list will be displayed in this structure\line\line\b // route or URL ---> {\b0{\field{\*\fldinst{HYPERLINK http://localhost:8080/customer/list }}{\fldrslt{http://localhost:8080/customer/list\ul0\cf0}}}}\b0\f0\fs22\par
+\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+     "data" : \par
+\tab     customers : \par
+\tab\tab [\{\par
+\tab\tab    \par
+\tab\tab\}]\par
+\}\par
+\par
+\cf1\b\fs24 J.  Customer Edit\par
+\line\cf0\fs22 // route or URL ---> {\b0{\field{\*\fldinst{HYPERLINK http://localhost:8080/customer/edit }}{\fldrslt{http://localhost:8080/customer/edit\ul0\cf0}}}}\b0\f0\fs22\par
+\par
+
+\pard 1. \cf3\kerning0 // If phone number is not  in correct format when editing, then\cf0\par
+\par
+\b Response Syntax :- \b0\par
+\{\par
+    "code": 401,\par
+    "success": false,\par
+    "message" : ""\par
+\}\par
+\par
+\kerning2 2. \cf3\kerning0 // If customer is succesfully edited, then\cf0\par
+
+\pard\widctlpar\kerning2\par
+\{\par
+    "code": 200,\par
+    "success": true,\par
+    "message": "",\par
+\}\par
+\cf1\b\fs24\par
+\cf0\b0\fs22\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
